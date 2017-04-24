@@ -1,25 +1,46 @@
-logoºÍ×ó²à µ¼º½À¸²»±ä ÓÒ±ßÊı¾İÓÃ xx.load('aa.html #main'); ¼ÓÔØ
-load¼ÓÔØ²»¹ÜÊÇ·ñĞ´#main ¶¼»áÓĞ<div id=main></div>±êÇ©
-ËùÒÔ aa.html ²»ÄÜĞ´main Àï Ö±½ÓĞ´ÀïÃæµÄÄÚÈİ
+ï»¿logoå’Œå·¦ä¾§ å¯¼èˆªæ ä¸å˜ å³è¾¹æ•°æ®ç”¨ xx.load('aa.html #main'); åŠ è½½
+loadåŠ è½½ä¸ç®¡æ˜¯å¦å†™#main éƒ½ä¼šæœ‰<div id=main></div>æ ‡ç­¾
+æ‰€ä»¥ aa.html ä¸èƒ½å†™main é‡Œ ç›´æ¥å†™é‡Œé¢çš„å†…å®¹
 
-Êı¾İ¿âÓÃÇ°×º·Ö¸ô  ²»Òª´´½¨¶à¸ö¿â
-µã»÷×ó²àÀ¸Ä¿¼ÓÔØ#main£¬µã»÷mainÀïµÄÀ¸Ä¿ÃûÔÙÓÃjsÑ¡ÖĞ
+æ•°æ®åº“ç”¨å‰ç¼€åˆ†éš”  ä¸è¦åˆ›å»ºå¤šä¸ªåº“
+ç‚¹å‡»å·¦ä¾§æ ç›®åŠ è½½#mainï¼Œç‚¹å‡»mainé‡Œçš„æ ç›®åå†ç”¨jsé€‰ä¸­
 
-À¸Ä¿---
-À¸Ä¿ÉèÖÃ
-Ìí¼ÓÀ¸Ä¿
+æ ç›®---
+æ ç›®è®¾ç½®
+æ·»åŠ æ ç›®
 
-Ö÷Ìâ--
-Ö÷ÌâÉèÖÃ
-Ìí¼ÓÖ÷Ìâ
+ä¸»é¢˜--
+ä¸»é¢˜è®¾ç½®
+æ·»åŠ ä¸»é¢˜
 
-Ò»¸öÏÂÀ­¿ò ¸÷ÖÖÏîÄ¿Ãû
-È»ºóÒ»¸ötable
-ĞòºÅ ±êÌâ ½ÚÑ¡ÄÚÈİ  ´´½¨Ê±¼ä ĞŞ¸ÄÊ±¼ä 
+ä¸€ä¸ªä¸‹æ‹‰æ¡† å„ç§é¡¹ç›®å
+ç„¶åä¸€ä¸ªtable
+åºå· æ ‡é¢˜ èŠ‚é€‰å†…å®¹  åˆ›å»ºæ—¶é—´ ä¿®æ”¹æ—¶é—´ 
 
-ÓÃ»§--
-ÔİÊ±²»Ğ´
+ç”¨æˆ·--
+æš‚æ—¶ä¸å†™
 
-ĞèÒª´´½¨µÄÊı¾İ¿â
-news_content  ×Ö¶Î id title con create_date update_date iid ¹ØÁªÀ¸Ä¿id   
-news_items ×Ö¶Î id name create 
+éœ€è¦åˆ›å»ºçš„æ•°æ®åº“
+news_content  å­—æ®µ id title con create_date update_date iid å…³è”æ ç›®id   
+news_items å­—æ®µ id name create
+
+
+åœ¨bastç›®å½•ä¸‹å»ºç«‹common.php
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<include file="Public/head"/> headé¡µå†™jså’Œcssçš„é€šç”¨é“¾æ¥ å’Œ<block name='href'></block>
+<title> <block name='title'>æ ‡é¢˜</block></title>
+</head>
+<include file="Public/header"/> æ”¾é¡µå¤´ å¦‚logo
+<include file="Public/body"/>   <div id='main'> ä¸»ä½“
+<include file="Public/footer"/>
+</body>
+</html>
+æ¯ä¸ªé¡µé¢åŒ…å«è¿™ä¸ªæ–‡ä»¶ <extend name='Bast/common'/> 
+ç»§æ‰¿ä¹‹å å†™ <block name='href'>ç‹¬æœ‰çš„css jsé“¾æ¥ <xx> 
+
+
+
+
