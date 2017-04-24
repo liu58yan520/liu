@@ -1,0 +1,25 @@
+logo和左侧 导航栏不变 右边数据用 xx.load('aa.html #main'); 加载
+load加载不管是否写#main 都会有<div id=main></div>标签
+所以 aa.html 不能写main 里 直接写里面的内容
+
+数据库用前缀分隔  不要创建多个库
+点击左侧栏目加载#main，点击main里的栏目名再用js选中
+
+栏目---
+栏目设置
+添加栏目
+
+主题--
+主题设置
+添加主题
+
+一个下拉框 各种项目名
+然后一个table
+序号 标题 节选内容  创建时间 修改时间 
+
+用户--
+暂时不写
+
+需要创建的数据库
+news_content  字段 id title con create_date update_date iid 关联栏目id   
+news_items 字段 id name create 
