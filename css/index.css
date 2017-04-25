@@ -98,8 +98,6 @@ width:100%;
 	}
    	#youlike .car_list{
    		width:50%;
-
-   		background:red;
    		overflow: hidden;
    		float: left;
    		
@@ -115,11 +113,38 @@ width:100%;
     	margin: 5px 0 0 0;
     }
    	#youlike .car_list figcaption .title{
-   		width:98%;
-   		height:45px;
+   		padding:0 5px;
+   		height:40px;
    		line-height:20px;
-   		font-size:16px;
+   		font-size:14px;
+   		border:none;
    	
    	}
+   	#youlike .car_list figcaption .info{
+   		font-size:12px;
+   		color:#999;
+   		margin:-10px 0 0 0;
+   		
+   	}
+   	#youlike .car_list figcaption .price{
+   		color:#FB0606;
+   		font-size:16px;
+   		padding: 2px 0 5px 8px;
+   	}
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
    	
    	

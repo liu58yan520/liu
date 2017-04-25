@@ -1,0 +1,197 @@
+div,ul,ol,li,img{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #ddd;
+}
+
+#top{
+	clear:both;
+	padding: 0 10px;
+	margin:215px  0 0 0;
+	background: #fafafa;
+}
+#top .title{
+	font-size:15px;
+	margin:8px 0 5px;
+}
+#top .car_info{
+	font-size:13px;
+	color:#999999;
+	margin:3px 0 5px 0;
+}
+#top .now_price{
+	color:red;
+	font-size:26px;
+	float:left;
+	margin: 0 10px 0 0;
+	padding:5px 0;
+	
+}
+#top .info_price{
+	padding:5px 0;
+	color:#999999;
+	font-size:13px;
+}
+#main {
+	margin:8px 0 0 0; 
+	clear:both;
+  	width: 100%;
+  	background: #fafafa;
+  } 		
+#main .info .title{
+ 	font-size:20px;
+ 	margin:0 8px;
+ 	clear:both;
+ 	height:35px;
+ 	line-height: 35px;
+ 	
+ } 
+ #main .archives {
+ 	background:red；
+ 	border-bottom: 1px solid #ccc;
+ } 		
+#main .archives li{
+	box-sizing:border-box;
+	width:33.33%;
+	float:left;
+	text-indent: 7px;
+	border:1px solid #ccc;
+	padding: 5px 0 5px;
+	text-align: center;
+} 	
+#main .archives .left{
+	border-left:none;
+}	
+#main .archives .right{
+	border-right:none;
+}
+#main .archives li div{
+	font-size:16px;
+
+}  	
+#main .archives li p{
+	font-size:13px;
+	color:#999;
+
+} 
+#main .other_archives{
+	clear:both;
+	height:85px;
+	width:94%;
+	margin:0 auto;
+	text-indent:8px;
+	padding: 15px 0 0 0;
+	border-bottom: 1px solid #ccc;
+
+}
+#main .other_archives li{
+	width:45%;
+	float:left;
+	margin:0px 0 5px 0px;
+	text-align: left;
+
+}
+#main .other_archives .q{
+	font-size:14px;
+	color:#999;
+}
+#main .other_archives .r{
+	font-size:15px;
+}
+
+#main .all_config{
+	text-align: center;
+	height:33px;
+	line-height: 33px;
+	font-size: 14px;
+
+}
+
+#seller{
+	background:#fafafa;
+	margin:10px 0 0 0 ;
+}
+#seller .title{
+	font-size:20px;
+	height:35px;
+	line-height: 35px;
+	text-indent: 10px;
+	margin: 0 auto;
+	border-bottom: 1px solid #ccc;
+}
+#seller	.house {
+	margin:10px 0 0 10px;
+	height:30px;
+	line-height: 30px;
+
+}
+#seller	.house img{
+	width:30px;
+	height:30px;
+	float:left;
+}
+#seller	.house span{
+	color:#200101;
+	font-weight:bold;
+	font-size:19px;
+	margin:0 0 0 5px;
+}
+
+#seller	.text{
+	font-size:14px;
+	padding: 5px 8px;
+	text-indent: 20px;
+}
+
+#seller .address{
+	text-align: center;
+	font-size:15px;
+	color:#666;
+	margin:10px 0;
+	padding-bottom: 10px;
+}
+#show{
+	background: #fafafa;
+	margin:10px 0 0 0;
+
+}
+
+#show .title{
+	font-size:20px;
+	height:35px;
+	line-height: 35px;
+	text-indent: 10px;
+	margin: 0 auto;
+	border-bottom: 1px solid #ccc;
+}
+
+#show img{
+	width:100%;
+}
+
+
+#foot{
+	width:100%;
+	height:35px;
+	line-height: 35px;
+	position: fixed;
+	bottom: 0;
+	border-top:1px solid #ddd;
+}
+
+#foot .collect{
+	float:left;
+	width:20%;
+	background:#fafafa;
+	text-align: center;
+	color:#F38A09;
+}
+#foot .photo{
+	float:right;
+	background:#F38A09;
+	width:80%;
+	text-align: center;
+	}

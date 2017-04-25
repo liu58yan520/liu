@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+/*	    #top{
+	    	position: fixed;
+	    	width:100%;
+	    	height:40px;
+	    	line-height: 40px;
+	    }
+	    #top .item{
+	    	float:left;
+	    	width:33.33%;
+	    	text-align: center;
+	    }*/
+    </style>
+</head>
+<body>
+<!--	<div id="top">
+		<div class="item">车源收藏</div>
+		<div class="item">浏览历史</div>
+		<div class="item">联系纪律</div>
+	
+	</div>-->
+	
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		var NVNavigationBar = api.require('NVNavigationBar');
+		NVNavigationBar.open({
+		    rect: {
+		         x: 0,
+		         y: 0,
+		         w: api.frameWidth,
+		         h: 42
+		    },
+		   styles: {
+		         orientation: 'horizontal',
+		         bg: '#fafafa',
+		         bgAlpha: 1,
+		         font: {
+		         size: 15,
+		         sizeSelected: 15,
+		         color: '#333',
+		         colorSelected: '#f60',
+		         alpha: 1
+		         },
+		         itemSize: {
+		             w: 120,
+		             h: 42
+		         }
+		   },
+		    items: [{
+		       title: '车源收藏',
+
+		       },{
+		       title: '浏览历史',
+
+		       },{
+		       title: '联系纪律',
+		       }],
+		       
+		       id: 'other_item'
+		}, function(ret, err) {
+		
+			});
+
+		NVNavigationBar.setSelected({
+			id:'other_item',
+			index:api.pageParam.index
+		});
+		
+		
+		
+		
+	};
+</script>
+</html>

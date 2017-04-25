@@ -71,12 +71,13 @@
     		<div class="price item">
     			<span class='price_text'>3万以下</span>
     		</div>
-    		<div class="allcar">查看全部车源</div>    
-    		    	<div class='other_item'>
-    		<div> ☆汽车收藏</div>
-    		<div> ☆浏览历史</div>
-    		<div> ☆联系纪律</div>
-    	</div>
+    		<div class="allcar">查看全部车源</div>  
+    		  
+    		<div class='other_item'>
+	    		<div> ☆汽车收藏</div>
+	    		<div> ☆浏览历史</div>
+	    		<div> ☆联系纪律</div>
+    		</div>
     	</div>
 <footer>
 <div id="youlike">
@@ -85,23 +86,39 @@
 		<img src='image/car1.jpg'> 
 		<figcaption>
 			<div class="title">兰博基尼 总裁 商务版  12v发动机 6.0T 四驱 双离合</div>
-			<div class="info"> <span class='year'>5</span>年 | <div class="countKM">3.2</div>万公里  </div>
+			<div class="info"> <span class='year'>5</span>年 | <span class="countKM">3.2</span>万公里  </div>
 			<div class="price">180万</div>
-		
+			<div class="hid" hidden="hidden">1</div>
 		</figcaption>
 	</figure>
-	<!--<figure class='car_list' >
+	<figure class='car_list' >
 		<img src='image/car2.jpg'> 
-		<figcaption>豪车</figcaption>
+		<figcaption>
+			<div class="title">兰博基尼 总裁 商务版  12v发动机 6.0T 四驱 双离合</div>
+			<div class="info"> <span class='year'>5</span>年 | <span class="countKM">3.2</span>万公里  </div>
+			<div class="price">180万</div>
+			<div class="hid" hidden="hidden">2</div>
+	</figcaption>
 	</figure>
+
 	<figure class='car_list' >
 		<img src='image/car3.jpg'> 
-		<figcaption>豪车</figcaption>
+		<figcaption>
+			<div class="title">兰博基尼 总裁 商务版  12v发动机 6.0T 四驱 双离合</div>
+			<div class="info"> <span class='year'>5</span>年 | <span class="countKM">3.2</span>万公里  </div>
+			<div class="price">180万</div>
+			<div class="hid" hidden="hidden">3</div>
+		</figcaption>
 	</figure>
 	<figure class='car_list' >
 		<img src='image/car4.jpg'> 
-		<figcaption>豪车</figcaption>
-	</figure>-->
+		<figcaption>
+			<div class="title">兰博基尼 总裁 商务版  12v发动机 6.0T 四驱 双离合</div>
+			<div class="info"> <span class='year'>5</span>年 | <span class="countKM">3.2</span>万公里  </div>
+			<div class="price">180万</div>
+			<div class="hid" hidden="hidden">4</div>
+		</figcaption>
+	</figure>
 
 </div>	
 </footer>
@@ -110,7 +127,71 @@
 <script type="text/javascript" src="./script/api.js"></script>
 <script type="text/javascript">
     apiready = function(){
+    	var all_car=$api.dom('.allcar');
+		$api.addEvt(all_car, 'click', function(){
+			api.openWin({
+	            name: 'all_car',
+	            url: 'html/allcar.html'
+            });
 		
-    };
+		});
+		
+		
+		var allcar_list=$api.domAll('.car_list');
+		for(var i=0;i<allcar_list.length;i++){
+			(function(){      
+		    var p = i  ; 
+		    var hid=$api.dom(allcar_list[p],'.hid');
+		    $api.addEvt(allcar_list[i], 'click', function(){       
+		   		var hid=$api.dom(allcar_list[p], '.hid'); 
+		    
+		     api.openWin({
+			    name: 'car',
+			    url: 'html/car.html',
+			    pageParam: {
+			        hid:$api.text(hid),
+			    }
+			});
+		      
+		        
+		    } ) 
+		  })();  
+		}
+		//other_item 项目  收藏 历史等被点击
+		var all_other=$api.domAll('.other_item div');
+
+		$api.addEvt(all_other[0], 'click', function(){
+			api.openWin({
+	            name: 'other_item',
+	            url: 'html/other_item.html',
+	            pageParam:{
+	            	index:0
+	            }
+            });
+            
+		});
+		
+		$api.addEvt(all_other[1], 'click', function(){
+			api.openWin({
+	            name: 'other_item',
+	            url: 'html/other_item.html',
+	            pageParam:{
+	            	index:1
+	            }
+            });
+            
+		});
+		$api.addEvt(all_other[2], 'click', function(){
+			api.openWin({
+	            name: 'other_item',
+	            url: 'html/other_item.html',
+	            pageParam:{
+	            	index:2
+	            }
+            });
+            
+		});
+		
+};
 </script>
 </html>
