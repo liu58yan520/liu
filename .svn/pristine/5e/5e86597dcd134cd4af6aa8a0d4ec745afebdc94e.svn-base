@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+
+    </style>
+</head>
+<body>
+<header>
+
+
+</header>
+	
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+	    var header = document.querySelector('header');
+		$api.fixStatusBar(header);
+		var headerH=$api.offset(header).h  
+		var NVNavigationBar = api.require('NVNavigationBar');
+		NVNavigationBar.open({
+		    rect: {
+		         x: 0,
+		         y: headerH,
+		         w: api.frameWidth,
+		         h: 42
+		    },
+		   styles: {
+		         bg: '#eee',
+		         bgAlpha: 1,
+		         font: {
+		         size: 18,
+		         sizeSelected: 18,
+		         color: '#fafafa',
+		         colorSelected: '#E36B19',
+		         alpha: 1
+		         },
+		   },
+		   
+		    items: [{
+		       title: '车源收藏',
+
+		       },{
+		       title: '浏览历史',
+
+		       },{
+		       title: '联系记录',
+		       }],
+		       selectedIndex: api.pageParam.index,
+		       id: 'other_item',
+		       
+		}, function(ret, err) {
+                if(ret.eventType=='click'){
+                	api.setFrameGroupIndex({
+	                    name: 'list',
+	                    index:ret.index
+                    });
+                
+                }
+                
+			});
+
+		
+		api.openFrameGroup({
+	        name: 'list',
+	        scrollEnabled:true,
+	        index:api.pageParam.index,
+			rect: {
+			        x: 0,
+			        y: headerH+42,
+			        w: api.frameWidth,
+			        h: 'auto'
+			    },
+			    frames: [{
+			        name: 'collect',
+			        url: 'list.html',
+			        pageParam:{
+			        	type:'collect'
+			        }  
+			    }, {
+			        name: 'history',
+			        url: 'list.html',
+			        pageParam:{
+			        	type:'history'
+			        } 
+			    }, {
+			        name: 'contact',
+			        url: 'list.html',
+			        pageParam:{
+			        	type:'contact'
+			        } 
+			    }], 
+        },function(ret,err){
+			NVNavigationBar.setSelected({
+			    id: 'other_item',
+			    index: ret.index
+				});
+        });
+
+		
+		
+	};
+</script>
+</html>

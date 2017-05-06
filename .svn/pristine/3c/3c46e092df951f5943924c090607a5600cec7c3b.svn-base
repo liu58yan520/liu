@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>在售二手车</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/allcar.css"/>
+</head>
+<body>
+<header>
+<div id="top">
+	<div class="select">品牌</div>
+	<div class="select">价格</div>
+	<div class="select">筛选</div>
+	<div class="select last">排序</div>
+</div>
+</header>
+<div id="msg"><span class='info'>因为专注 所以专业</span> <span class='count'>共12355辆</span></div>
+<div id="main">
+	<figure class='car_list' >
+		<img src='../image/car1.jpg'> 
+		<figcaption>
+			<div class="title">兰博基尼 总裁 商务版  12v发动机 6.0T 四驱 双离合</div>
+			<div class="info"> <span class='year'>5</span>年 | <span class="countKM">3.2</span>万公里  </div>
+			<div class="price">180万</div>
+			<div class="hid" hidden="hidden">1</div>
+		</figcaption>
+	</figure>
+	<figure class='car_list' >
+		<img src='../image/car2.jpg'> 
+		<figcaption>
+			<div class="title">兰博基尼 总裁 商务版  12v发动机 6.0T 四驱 双离合</div>
+			<div class="info"> <span class='year'>5</span>年 | <span class="countKM">3.2</span>万公里  </div>
+			<div class="price">180万</div>
+			<div class="hid" hidden="hidden">2</div>
+		</figcaption>
+	</figure>
+	<figure class='car_list' >
+		<img src='../image/car3.jpg'> 
+		<figcaption>
+			<div class="title">兰博基尼 总裁 商务版  12v发动机 6.0T 四驱 双离合</div>
+			<div class="info"> <span class='year'>5</span>年 | <span class="countKM">3.2</span>万公里  </div>
+			<div class="price">180万</div>
+			<div class="hid" hidden="hidden">3</div>
+		</figcaption>
+	</figure>
+	<figure class='car_list' >
+		<img src='../image/car3.jpg'> 
+		<figcaption>
+			<div class="title">兰博基尼 总裁 商务版  12v发动机 6.0T 四驱 双离合</div>
+			<div class="info"> <span class='year'>5</span>年 | <span class="countKM">3.2</span>万公里  </div>
+			<div class="price">180万</div>
+			<div class="hid" hidden="hidden">3</div>
+		</figcaption>
+	</figure>
+
+
+</div>
+	
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+	    	var header = document.querySelector('header');
+		$api.fixStatusBar(header);
+		var allcar_list=$api.domAll('.car_list');
+		for(var i=0;i<allcar_list.length;i++){
+			(function(){      
+		    var p = i  ; 
+		    var hid=$api.dom(allcar_list[p],'.hid');
+		    $api.addEvt(allcar_list[i], 'click', function(){       
+		   		var hid=$api.dom(allcar_list[p], '.hid'); 
+		    
+		     api.openWin({
+			    name: 'car',
+			    url: 'car.html',
+			    useWKWebView:true,
+	            historyGestureEnabled:true,
+	            animation:{
+	            	type:'flip',   
+    				duration:400 
+	            },
+			    pageParam: {
+			        hid:$api.text(hid),
+			    }
+			});   
+		    } ) 
+		  })();  
+		}
+		
+		
+		
+};
+</script>
+</html>

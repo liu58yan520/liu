@@ -1,0 +1,16 @@
+car
+
+brand品牌
+name 汽车名字
+title 30字
+card_date 上牌日期
+countKM 公里数
+gear  档位 0 手自一体，1自动挡 2手动挡
+displacement 排量 两位
+price 价格 3位
+reference 参考价格
+photo  电话
+
+
+collection_count 收藏量
+click_count点击量

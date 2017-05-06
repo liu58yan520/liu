@@ -1,0 +1,151 @@
+body{
+background: #ddd;
+width:100%;
+}
+ 
+ 	#logo{
+ 		width:100%;
+   		height:160px;
+   		}
+ 	#logo img{
+   		width:100%;
+   		height:160px;
+   		overflow: hidden;
+   	}
+   	
+	#main{
+		clear:both;
+		height:auto;
+		width:100%;
+		background: #fafafa;
+	}
+	#main .item{
+		width:25%;
+		float:left;
+	}
+	
+   	#main .brand img{
+   		height:60px;
+   		display:block;
+   		margin:0 auto;
+   	}
+   	#main .brand span{
+   		font-size:14px;
+	   	margin:-18px 0 0 0;
+	   	text-align:center;
+   		display:block;
+   	}
+   	#main .price{
+	   	height:40px;
+	   	line-height: 40px;
+	   	font-size:16px;
+	   	text-align: center;
+   	}
+   	#main .allcar{
+   		clear:both;
+   		width:94%;
+   		margin:0 auto;
+   		text-align: center;
+   		border:1px solid #f60;
+   		border-radius: 3px;
+   		height:30px;
+   		line-height: 30px;
+   		color:#f60;
+   	}
+   	#main .other_item{
+   		width:94%;
+   		height:40px;
+   		line-height:40px;
+   		margin:15px auto 0;
+   		border-top:1px solid #ccc;
+   	
+   	}
+   	#main .other_item div{
+   		width:33.33%;
+   		float:left;
+   		height:40px;
+   		line-height:40px;
+   		text-align: center;
+   	}
+   	
+   	#youlike{
+   		margin:10px auto 0;
+   		padding:7px 5px;
+   		background: #fdfdfd;
+   	}
+   	#youlike .title  {
+		border-bottom:1px solid #ccc;
+   		height:35px;
+   		line-height: 35px;
+   		margin:0 0 10px 0;
+   		position: relative;
+   	}
+   	#youlike .title span{
+   		text-indent:18px;
+	  	font-size:18px;
+   	}
+   	#youlike .title img{
+		position: absolute;
+		bottom:9px;;
+		right:50px;
+   	}
+	#youlike .title em{
+		float:right;
+		margin:0 15px 0 0;
+		color:#aaa;
+		font-size:14px;
+		background-image: url(../image/change.gif) no-repeat;
+	}
+   	#youlike .car_list{
+   		width:50%;
+   		overflow: hidden;
+   		float: left;
+   		
+
+   	}
+ 	#youlike .car_list img{
+ 		width:92%;
+   		height:140px;
+   		margin:0 auto;
+   		display:block;
+   		border-radius: 5px;
+ 	} 	
+    #youlike .car_list	figcaption{
+    	margin: 5px 0 0 0;
+    }
+   	#youlike .car_list figcaption .title{
+   		padding:0 5px;
+   		height:40px;
+   		line-height:20px;
+   		font-size:14px;
+   		border:none;
+   	
+   	}
+   	#youlike .car_list figcaption .info{
+   		font-size:12px;
+   		color:#999;
+   		margin:-10px 0 0 0;
+   		
+   	}
+   	#youlike .car_list figcaption .price{
+   		color:#FB0606;
+   		font-size:16px;
+   		padding: 2px 0 5px 8px;
+   	}
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	

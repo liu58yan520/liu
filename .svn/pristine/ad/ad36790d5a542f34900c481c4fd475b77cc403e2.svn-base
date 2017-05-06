@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+ 	<link rel="stylesheet" href="../css/car.css" />
+</head>
+<body>
+<header>
+		<div id="top">
+			<p class='title'>兰博基尼 总裁 商务版  12v发动机 6.0T 四驱 双离合</p>
+			<div class="car_info">2016-8 上牌 | 5万公里 | 双离合 | 1.4L</div>
+			<div class="now_price">17万</div>
+			<div class="info_price">
+				<div class="re_price">参考估价：100-200万</div>
+				<div class="count_price">新车总价:300万(含税)</div>
+			</div>
+		</div>
+</header>
+
+<div id="main">
+	<div class="info">
+	<p class="title">车辆档案</p>
+	<ul class="archives">
+		<li class='left'><div>4S定期保养</div> <p>品质保证</p> </li>
+		<li><div>4S定期保养</div> <p>品质保证</p> </li>
+		<li class='right'><div>4S定期保养</div> <p>品质保证</p> </li>
+		
+		<li class='left'><div>4S定期保养</div> <p>品质保证</p> </li>
+		<li><div>4S定期保养</div> <p>品质保证</p> </li>
+		<li class='right'><div>4S定期保养</div> <p>品质保证</p> </li>
+	</ul>
+	<ol class='other_archives'>
+		<li><span class="q">来源 : </span> <span class="r"> 商家</span></li>
+		<li><span class="q">年检: </span> <span class="r"> 2017-09到期</span></li>
+		<li><span class="q">拍照 : </span> <span class="r"> 本地牌</span></li>
+		<li><span class="q">车身 : </span> <span class="r"> 5门5座两厢</span></li>
+		<li><span class="q">品牌 : </span> <span class="r"> 兰博基尼</span></li>
+		<li><span class="q">燃油 : </span> <span class="r"> 95号</span></li>
+	</ol>
+	
+	</div>
+	<div class="all_config">查看详细参数配置  &gt;&gt;</div>
+</div>
+
+<div id="seller">
+	<div class="title">卖家描述</div>
+	<div class="house">
+		<img src="../image/house.png" alt="" />
+		<span>腾信金牌二手车营销中心</span>
+	</div>
+	<div class="text">
+	好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车
+	好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车
+	好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车好车
+</div>
+	<div class="address">
+		Ψ 镇江市丁卯 如意江南   &gt;&gt;
+	</div>
+	
+</div>
+<div id="show">
+	<div class="title">图片展示</div>
+	<img src="../image/car4.jpg" alt="" />
+	<img src="../image/car2.jpg" alt="" />
+	<img src="../image/car3.jpg" alt="" />
+	<img src="../image/car1.jpg" alt="" />
+</div>
+<div style='height:45px;'></div>
+
+<footer>
+	<div id="foot">
+		<div class="collect">☆ 收藏</div>
+		<div class="photo">☎ 打电话</div>
+	</div>
+
+</footer>		
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+	    var header = document.querySelector('header');
+		$api.fixStatusBar(header);
+		var headerH=$api.offset(header).h; 
+		var UIScrollPicture = api.require('UIScrollPicture');
+UIScrollPicture.open({
+    rect: {
+        x: 0,
+        y: 0,
+        w: api.winWidth,
+        h: api.winHeight / 3
+    },
+    data: {
+        paths: [
+            '../image/car1.jpg',
+            '../image/car2.jpg',
+            '../image/car4.jpg',
+            '../image/car3.jpg',
+        ],
+    },
+    styles: {
+        caption: {
+            height: 35,
+            color: '#E0FFFF',
+            size: 13,
+            bgColor: '#696969',
+            position: 'bottom'
+        },
+        indicator: {
+            align: 'center',
+            color: '#FFFFFF',
+            activeColor: '#DA70D6'
+        },
+      indicator: {       
+    align: 'right',           
+    color: '#fafafa',          
+    activeColor: '#DA70D6'  
+	}
+    },
+    placeholderImg: '../image/loading.gif',
+    contentMode: 'scaleToFill',
+    interval: 3,
+    loop: true,
+    auto:true,
+    fixed: false
+}, function(ret, err) {
+
+});
+	
+	$api.addEvt($api.dom('.photo'), 'click', function(){
+		api.call({
+		    type: 'tel_prompt',
+		    number: '10086'
+		});
+	});			
+};
+</script>
+</html>
