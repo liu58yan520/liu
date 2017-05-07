@@ -1,0 +1,89 @@
+*,h1,ul,ol,article{ margin: 0; padding: 0; }
+body{
+	margin: 0 auto;
+}
+ol,ul{ list-style: none; }
+a,a:visited,a:hover{ text-decoration: none !important ; }
+/*********预定义********************/
+
+#top{
+	width: 100%;
+	height: 128px;
+	background:linear-gradient(to right,#aaa 0%,#fafafa 100%);
+	padding:20px 35px;
+}
+
+#top h1{
+	text-indent: -999px;
+	display: block;
+	height: 78px;
+	width: 199px;
+	
+	background: url(../img/logo1.png) no-repeat left center;
+}
+
+#nav{
+	width:17%;
+	min-height: 660px;
+	background: #ccc;
+	float: left;
+}
+#nav ul{
+
+}
+#nav ul li{
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	border-bottom: 1px solid #333;
+	background:linear-gradient(to right,#696969 0%,#ddd 40%,#ddd 80%,#696969 100%);
+}
+#nav ul li a {
+	color:#000;
+	line-height: 50px;
+	display: block;
+	font-size: 22px;
+	font-weight: 800;
+}
+#nav ul li.selected_li a{
+	background: #333;
+	color: #CA622F;
+}
+#nav ul .item {
+	display: none;
+}
+#nav ul .item div{
+	height: 35px;
+	line-height: 35px;
+	background: #777;
+	border-bottom: 1px solid #333;
+
+}
+#nav ul .item div.selected_div{
+	background:#7C4917;
+	color:#fafafa;
+}
+#nav ul  .item div a{
+	display: block;
+	color:#eee;
+	font-weight: 700;
+	text-align: center;
+}
+#main{
+	float: right;
+	width: 83%;
+	padding: 10px;
+	min-height: 660px;
+	background: #fdfdfd;
+}
+footer{
+	clear: both;
+	width: 100%;
+	height: 80px;
+	background: #ccc;
+}
+
+/****************************/
+.none{
+	display: none;
+}
