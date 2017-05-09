@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title> 苏州乐园卡兑换系统</title>
+	<style>
+		
+		body{
+			margin: 0; padding: 0;
+			font-size: 14px;
+			background: #333;
+		}
+		.top{
+			width:33.33%;
+			height: 25%;
+			background: #fafafa;
+			border-top-left-radius: 50%;
+			border-top-right-radius: 50%;
+			position: absolute;
+			left:33.33%;
+			top: -13%;
+		}
+		.top img{
+			display: block;
+			margin: 15% auto 0;
+		}
+		#form{
+			display: block;
+			position: relative;
+		}
+		#form .center{
+			margin:80px  auto 0;
+			width: 80%;
+			height: 500px;
+			border-radius: 5px;
+			background: #fafafa;
+		}
+		
+		.title{
+			padding: 53px 0 20px;
+			text-align: center;
+			font-size: 26px;
+			font-weight: 700;
+		}
+		input{
+			display: block;
+			width:70%;
+			border-radius:3px;
+			height: 35px;
+			background: #ddd;
+			border:1px solid #000;
+			clear: both;
+			color: #333;
+			text-indent: 2px;
+			margin:0 auto 20px;	
+			font-size: 15px;
+		}
+		.center select{
+			display: block;
+			width: 72%;
+			height: 35px;
+			margin:0 auto;
+		}
+		.center p{
+			width: 70%;
+			height: 40px;
+			line-height: 20px;
+			font-size: 14px;
+			color:#999;
+			margin:10px auto;
+		}
+		.bg{
+			height: 70px;
+			width: 80%;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+			background: #000;
+			position: absolute;
+			bottom: 0;
+		}
+		button{
+			width:36.5%;
+			height: 50px;
+			border-radius: 30px;
+			font-size: 20px;
+			background: #FADE4E;
+			position: absolute;
+			bottom: 45px;
+			left: 32%;
+		}
+	</style>
+</head>
+<body>  	
+
+<form action='form.php' id='form' method="POST">
+			<div class="top"> <img src="aa.png" alt=""></div>
+	<div class='center'>
+		<div class="title">兑换信息</div>
+		<input type="text" name='name' placeholder=' 姓名'>
+		<input type="tel" name='tel' placeholder=' 电话'>
+		<input type="text" name='card' placeholder=' 身份证号'>
+		<select name='city'>
+			<option value='镇江'>镇江</option>
+			<option value='泰州'>泰州</option>
+			<option value='扬州'>扬州</option>
+		</select>
+		<p>每个姓名、电话号码 及身份证兑换一张苏州乐园卡(以此类推)。</p>
+		<div class='bg'></div>
+		<button type='submit' >提交</button>
+	</div>
+
+</form>
+    
+</body>
+</html>
