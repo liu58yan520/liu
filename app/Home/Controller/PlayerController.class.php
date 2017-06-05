@@ -8,10 +8,7 @@ class PlayerController extends Controller {
     public function player_list(){
     	$this->display();
     }
-    public function test(){
-	    $u=D('User');
-	   echo  $u->testM();
-    }
+
 
 
 }
