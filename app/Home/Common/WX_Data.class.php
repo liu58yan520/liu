@@ -1,10 +1,4 @@
 <?php
-/**
- * 要用时直接  $pay=new \Home\Common\WX();
- * 
- * 
-*/
-
 namespace Home\Common;
 class WX_Data {
 

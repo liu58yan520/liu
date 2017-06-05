@@ -18,8 +18,8 @@
 	</header>
 <div id="title">
 	<div class='tit'>
-		<span class="name">习近平</span>
-		<span class="date">2017年6月2日发起</span>
+		<span class="name">{$player.name}</span>
+		<span class="date">{$player.createAT}</span>
 		<span class="Surplus">剩余5天</span>
 		<p class="title">标题xxx</p>
 	</div>
@@ -34,7 +34,7 @@
 		</div>
 		<div>
 			<p>已筹集</p>
-			<p class='strong'>600元</p>
+			<p class='strong'>{$player.count_pay}元</p>
 		</div>
 	</div>	
 	
@@ -52,9 +52,9 @@
 </div>
 
 <div id="dialog">
-<img class='pic' src="__IMG__/108/陈东.jpg">
+<img class='pic' data="__IMG__/108/{$player.name}.jpg">
 	<div class="text">
-		<p class='con'>刘炎</p>
+		<p class='con'>{$player.name}</p>
 		<p class='con'>还剩528元</p>
 	</div>
 	<div class="pay_num">

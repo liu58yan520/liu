@@ -1,5 +1,8 @@
 <?php
 namespace Home\Common;
+/**
+ * 要用时直接  $wx=new \Home\Common\WX(); 
+*/
 class WX extends WX_Data {
 
     private function getCode(){

@@ -9,18 +9,18 @@
     <meta name="x5-fullscreen" content="true">
     <meta name="360-fullscreen" content="true">
 	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="/web/collect/Public/css/common.css">
-	<link rel="stylesheet" type="text/css" href="/web/collect/Public/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/collect/Public/css/common.css">
+	<link rel="stylesheet" type="text/css" href="/collect/Public/css/index.css">
 </head>
 <script type="text/javascript">
-  	// var APP 		= "/web/collect";
-   //  var MODULE 		= "/web/collect/Home";
-   //  var CONTROLLER 	= "/web/collect/Home/Index";
-   //  var ACTION 		= "/web/collect/Home/Index/index";
-    var IMG         ="/web/collect/Public/img";     
+  	// var APP 		= "/collect";
+   //  var MODULE 		= "/collect/Home";
+   //  var CONTROLLER 	= "/collect/Home/Index";
+   //  var ACTION 		= "/collect/Home/Index/index";
+    var IMG         ="/collect/Public/img";     
 </script>
 <body>
-	<div id="bg"> <img src="/web/collect/Public/img/bg.jpg"> </div>
+	<div id="bg"> <img src="/collect/Public/img/bg.jpg"> </div>
 	<div id="main">
 		<p class='tishi'>此次优惠活动仅仅针对 《中国新歌声》江苏赛区108位唱将</p>
 		<div class="input">
@@ -30,7 +30,7 @@
 		<button id='select'>查找</button>
 	</div>
 <div id="dialog">
-<img class='pic' src="/web/collect/Public/img/108/陈东.jpg">
+<img class='pic' src="/collect/Public/img/108/陈东.jpg">
 	<div class="text">
 		<p class='con'>刘炎</p>
 		<p class='con'>未创建活动</p>
@@ -40,7 +40,7 @@
 		<button class='close'>关闭页面</button>
 	</biv>
 </div>
-<script type="text/javascript" src='/web/collect/Public/js/zepto.js'></script>
-<script type="text/javascript" src='/web/collect/Public/js/index.js'></script>
+<script type="text/javascript" src='/collect/Public/js/zepto.js'></script>
+<script type="text/javascript" src='/collect/Public/js/index.js'></script>
 </body>
 </html>

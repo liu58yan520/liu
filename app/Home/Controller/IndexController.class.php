@@ -1,24 +1,18 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+use Home\Model;
 class IndexController extends Controller {
 
-    protected $USER_108=array('刘炎','刘德华','大尺佑香','123','陈超');
-    private $wx;
-    public function  __construct(){
-        parent::__construct();
-        $this->wx=new \Home\Common\WX();
-    }
-    protected function CheckUser($name){
-        //$id=array_search($name,self::USER108);
-        $u=M('user');
+    protected $PLAYER=array('刘炎','刘德华','大尺佑香','123','陈超');
+    protected function CheckPlayer($name){
+        //$id=array_search($name,$this->PLAYER);
         $requ=array('name'=>$name);
         $field=array('id','createAT','count_pay');
-        return $u->where($requ)->field($field)->find();
+        $u=D('player');
+        return $u->getPlayer($requ,$field);
     }
-
     public function index(){
-       // echo $this->wx->getOpenid();
         $this->display();
     }
 
@@ -27,15 +21,14 @@ class IndexController extends Controller {
     	if(empty($name)&&$name=='undefined') 
     		echo false;
     	else
-            echo json_encode($this->CheckUser($name));
+            echo json_encode($this->CheckPlayer($name));
     }
 
-    public function create(){
+    public function createPlayer(){
         $id=I('get.id');
-        $u=M('user');
-        $data['createAT']=date("Y-m-d");
-        $a= $u->where('id='.$id)->save($data);
-        print_r($a);
+        $u=D('player');
+        if(!empty($id))
+        $u->createPlayer($id); 
     }
 }
 

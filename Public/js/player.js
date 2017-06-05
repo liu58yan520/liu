@@ -12,12 +12,11 @@ $(function(){
 	$('#nav button').eq(1).trigger('tap');  //模拟点击
 	/****************主页3个菜单结束**************************/
 	$('#pay').tap(function(){ //点击帮他筹款
+		$('#dialog .pic').attr('src',$('#dialog .pic').attr('data'));
 		$('#dialog').show();
 		$('#dialog').fadeIn().siblings().css({'opacity':'0.5'});
 	
 	});
-
-
 
 	$('#dialog .close').tap(function(){
 		$('#dialog').fadeOut().siblings().css({'opacity':'1'});
