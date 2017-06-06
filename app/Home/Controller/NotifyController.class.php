@@ -8,7 +8,7 @@ class NotifyController extends Controller {
     	file_put_contents('log.log',$xml,FILE_APPEND);
 	}
 
-	public function inset(){
-
+	public function inset(array $data){
+		
 	}
 }

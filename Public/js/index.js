@@ -6,7 +6,7 @@ $(function(){
 		name = $('#main input').val();
 		if(name==''||name=='undefined')
 			return false;
-		$.get('select?name='+name, function(data){
+		$.get('Index/select?name='+name, function(data){
 			USER= JSON.parse(data);
 			console.log(data);
 			if(USER){

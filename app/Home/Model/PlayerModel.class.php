@@ -12,4 +12,5 @@ class PlayerModel extends Model{
     	 echo $this->where('id='.$id)->save($data);
     }
    
+   
 }

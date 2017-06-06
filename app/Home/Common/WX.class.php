@@ -80,6 +80,7 @@ class WX extends WX_Data {
         );
         $back=$this->before_send($url,$post);
         $this->prepay_id=$back['prepay_id'];
+        return $back;
     }
     public function pay(){
         if(empty($this->prepay_id))
