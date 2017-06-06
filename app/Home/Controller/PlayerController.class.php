@@ -5,45 +5,62 @@ use Home\Model;
 class PlayerController extends Controller {
 	private $wx;
 	private $player;
-	private $user_info;
-
+	public 	$user;
 	public function __construct(){
 		parent::__construct();
 		$this->wx=new \Home\Common\WX(); 
-		//$this->GetNowUserInfo();   //获取用户信息
+		$this->GetNowUserInfo();   //获取用户信息
+
 	}
 	private function GetNowUserInfo(){
-		if(isset($_COOKIE['user'])){
-		$user_info=$this->wx->getInfo();
-		$info=array(
-			'name'=>$user_info['nickname'],
-			'face'=>rtrim($user_info['headimgurl'],'0').'64',
-			'openid'=>$user_info['openid'],
-			);
-		setcookie('user',$info,7200+time());
-		}
+		if(!isset($_COOKIE['user'])){
+			$info=$this->wx->getInfo();
+			$user=array("name"=>$info['nickname'],"face"=>rtrim($info['headimgurl'],'0').'64','openid'=>$info['openid']);
+			setcookie("user['name']",$user['name']);
+			setcookie("user['face']",$user['face']);
+			setcookie("user['openid']",$user['openid']);
+			$this->user=$user;
+		}else
+			return $user;
+		
 	}
 	private function getPlayer(){
 		$u=D('player');
 		$requ=['id'=>I('get.id')];
-		$a=$this->player=$u->getPlayer($requ);
-		
+		$this->player=$u->getPlayer($requ);
 	}
     public function index(){
     	$this->getPlayer();
     	$this->assign('player',$this->player);
         $this->display();
     }
-    public function player_list(){
+    public function player_list(){	
+    	$fans=$this->getfans();
+    	$this->assign('fans',$fans);
     	$this->display();
     }
-    public function test(){
+    private function getfans(){
     	$u=D('fans');
-    	$User=$u->relation(true)->find(1);
-    	print_r($User);
+    	$fans=$u->getMyALLFans(I('get.id'));
+    	return $fans;
     }
     
+    public function pay_start(){
+    	$num=I('post.num');
+    	if(!is_numeric($num)||$num>500||$num<1)
+    		echo 'false';
 
-
-
+    }
+    public function pay(){
+    	$this->display();
+    }
+    public function send(){
+    	if(empty($this->user))
+    		$user=$this->GetNowUserInfo();
+    	$post=I('post.');
+    	$data=array_merge($post,$user);
+    	// $u=D('fans');
+    	// $back=$u->inset($data);
+    	dump($user);
+    }
 }

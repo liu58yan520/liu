@@ -59,19 +59,22 @@ class WX extends WX_Data {
         $this->api_key=$back['sandbox_signkey'];
     }
 
-    public function befoepay(){  //统一下单
+    public function befoepay($info,$attach='',$pay_num,$notify_url){  //统一下单
+        /*
+            商品描述，附加信息 价格，通知页面
+        */
         $url="https://api.mch.weixin.qq.com/pay/unifiedorder";
         $openid=$this->getOpenid();
         $post=array(
             "appid"		=>$this->appid,
             "mch_id"	=>$this->mch_id,
             "nonce_str"	=>$this->randStr(30),
-            "body"		=>'商品描述',
-            "attach"	=>'附近数据',
+            "body"		=>$info,
+            "attach"	=>$attach,
             "out_trade_no"=>$this->randStr(30),
-            "total_fee"	=>101,
+            "total_fee"	=>$pay_num,
             "spbill_create_ip"=>$_SERVER["REMOTE_ADDR"],
-            "notify_url"=>"",  //支付结果通知
+            "notify_url"=>$notify_url,  //支付结果通知
             "trade_type"=>"JSAPI",
             "openid"	=>$openid
         );

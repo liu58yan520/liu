@@ -1,12 +1,13 @@
 $(function(){
 
 	/****************主页3个菜单**************************/
-	$('#nav button').eq(0).tap(function(){ //点击捐款团列表
-		self.location="test";
+	$('#nav button').eq(0).tap(function(){ //点击活动详情
+	
 	});
 
 	$('#nav button').eq(1).tap(function(){ //点击捐款团列表
-		$('#main').load('player_list');
+		var id=urlget('id')
+		$('#main').load('player_list?id='+id);
 	});
 
 	$('#nav button').eq(1).trigger('tap');  //模拟点击
@@ -33,11 +34,21 @@ $(function(){
 		var pay_num=$('#dialog .pay_num .pay_num_text').val();
 		if(pay_num>1)
 			$('#dialog .pay_num .pay_num_text').val(Number(pay_num)-1);
-	
-
-		
 	});
 	/*************付款加减按钮结束*************************/
 
+	$('#dialog .pay_start').tap(function(){  //弹出框里点付款\
+		var num=$('#dialog .pay_num_text').val();
+		if(isNaN(num))
+			return false;
+		self:location='pay';
+	})
+
 
 });
+
+function urlget(name){
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	var r = window.location.search.substr(1).match(reg);
+	if(r!=null)return  unescape(r[2]); return null;
+}

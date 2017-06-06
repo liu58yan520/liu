@@ -6,9 +6,9 @@ $(function(){
 		name = $('#main input').val();
 		if(name==''||name=='undefined')
 			return false;
-		$.get('Index/select?name='+name, function(data){
+		$.get('select?name='+name, function(data){
 			USER= JSON.parse(data);
-			console.log(USER);
+			console.log(data);
 			if(USER){
 				$('#dialog .con').eq(0).text(name);
 				if(USER.createat){
