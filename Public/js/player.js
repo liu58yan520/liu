@@ -7,16 +7,17 @@ $(function(){
 
 	$('#nav button').eq(1).tap(function(){ //点击捐款团列表
 		var id=urlget('id')
-		$('#main').load('player_list?id='+id);
+		$('#main').load('fans_list?id='+id);
 	});
 
 	$('#nav button').eq(1).trigger('tap');  //模拟点击
 	/****************主页3个菜单结束**************************/
+
+
 	$('#pay').tap(function(){ //点击帮他筹款
 		$('#dialog .pic').attr('src',$('#dialog .pic').attr('data'));
 		$('#dialog').show();
 		$('#dialog').fadeIn().siblings().css({'opacity':'0.5'});
-	
 	});
 
 	$('#dialog .close').tap(function(){
@@ -41,7 +42,8 @@ $(function(){
 		var num=$('#dialog .pay_num_text').val();
 		if(isNaN(num))
 			return false;
-		self:location='pay';
+		self.location='pay?'+$(this).attr('data')+num;
+		
 	})
 
 

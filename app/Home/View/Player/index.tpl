@@ -63,7 +63,7 @@
 		<button> -</button>
 	</div>
 	<biv class="btn">
-		<button class='pay_start' >付款</button>
+		<button class='pay_start' data="{$player.pay_url}" >付款</button>
 		<button class='close'>关闭页面</button>
 	</biv>
 </div>

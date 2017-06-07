@@ -4,37 +4,57 @@ use Think\Controller;
 use Home\Model;
 class PlayerController extends Controller {
 	private $wx;
-	private $player;
-	public function __construct(){
+	function __construct(){
 		header("Content-Type:text/html;charset=utf-8"); 
 		parent::__construct();
 		$this->wx=new \Home\Common\WX(); 
-	//	$this->GetNowUserInfo();   //获取用户信息
 
 	}
+    public function index(){
+        $player=$this->getPlayer();
+        $fans=$this->GetNowUserInfo();   //获取用户信息
+        $this->downFace($fans['face'],$fans['openid']); //下载头像
+        $pay_url=$this->pay_url($player,$fans);
+        $player['pay_url']=$pay_url;
+        dump($player);
+        dump($fans);
+        $this->assign('player',$player);
+        $this->display();
+    }
 	private function GetNowUserInfo(){
-		if(!isset($_COOKIE['user'])){
-			$info=$this->wx->getInfo();
-			$user=array("name"=>$info['nickname'],"face"=>rtrim($info['headimgurl'],'0').'64','openid'=>$info['openid']);
-			setcookie("user[name]",$user['name'],7200+time());
-			setcookie("user[face]",$user['face'],7200+time());
-			setcookie("user[openid]",$user['openid'],7200+time());
-			return $user;
-		}else
-			return $_COOKIE['user'];
-		
+		// if(!isset($_COOKIE['user'])){
+		// 	$info=$this->wx->getInfo();
+  //           $user=array(
+  //               "name"=>$info['nickname'],
+  //               "face"=>rtrim(trim($info['headimgurl']),'0').'64',
+  //               'openid'=>$info['openid']);
+		// 	setcookie("user[name]",$user['name']);
+		// 	setcookie("user[face]",$user['face']);
+		// 	setcookie("user[openid]",$user['openid']);
+		// 	return $user;
+		// }else
+		// 	return $_COOKIE['user'];
+		$info=$this->wx->getInfo();
+            $user=array(
+                "name"=>$info['nickname'],
+                "face"=>rtrim(trim($info['headimgurl']),'0').'64',
+                'openid'=>$info['openid']);
+            return $user;
 	}
 	private function getPlayer(){
 		$u=D('player');
 		$requ=['id'=>I('get.id')];
-		$this->player=$u->getPlayer($requ);
+        return $u->getPlayer($requ);
 	}
-    public function index(){
-    	$this->getPlayer();
-    	$this->assign('player',$this->player);
-        $this->display();
+    private function pay_url($player,$fans){
+        $info['player_name']=$player['name'];
+        $info['fans_name']=$fans['name'];
+        $info['openid']=$fans['openid'];
+        $info['qid']=$player['id'];
+        return urldecode(http_build_query($info)).'&num=';    
     }
-    public function player_list(){	
+
+    public function fans_list(){	
     	$fans=$this->getfans();
     	$this->assign('fans',$fans);
     	$this->display();
@@ -45,48 +65,39 @@ class PlayerController extends Controller {
     	return $fans;
     }
     
-    public function pay_start(){
-    	$num=I('post.num');
-    	if(!is_numeric($num)||$num>500||$num<1)
-    		echo 'false';
-
-    }
     public function pay(){
-    	$this->display();
+        $this->assign('info',I('get.'));
+        $this->display();
     }
     public function send(){
-    	if(empty($this->user))
-    		$user=$this->GetNowUserInfo();   	
     	$post=I('post.');
-    	$data=array_merge($user,$post);
-    	// if(count($data)<4)
-    	// 	$this->error('付款提交有误，请返回重新操作',3);
-    	dump($data);
-    	$attr=urldecode($this->arrayTOstring($data));
+        $pay=$post['pay'];
+        $player_name=$post['player_name'];
+        unset($post['pay']);
+        unset($post['player_name']);
+    	$attr=urldecode($this->arrayTOstring($post));
  		$url=dirname(dirname('http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"])).'/Notify/index';
- 		$a=$this->wx->befoepay('新歌声108将众筹',$attr,$data['num']*100,$url);
- 		dump($a);
+ 		$a=$this->wx->befoepay('新歌声108将众筹--'.$player_name,$attr,$data['num']*100,$url,$post['openid']);
+        dump($a);
     }
     private function arrayTOstring(array $arr){
     	$str='';
     	foreach ($arr as $k => $v) 
-    		$str.=$k.'='.$v.'###';
-    	return rtrim($str,'###');
+    		$str.=$k.'='.$v.'#!#';
+    	return rtrim($str,'#!#');
     }
-    public function downFace(){
-    	$url="http://wx.qlogo.cn/mmopen/Q3auHgzwzM40l6HHibbX5ict9mOMI9gW8YBACYXVjh6Eia7kriaja6aoM3NvBZvcryJROfHo1zEuYYhBiapiamRZCGkw/64";
-    	$path=$_SERVER['DOCUMENT_ROOT'].__ROOT__.'/Public/img/face/a.jpg';
- 	// 	$con = file_get_contents($url);
-		// echo file_put_contents($path,$con);
-			$ch = curl_init();
-	curl_setopt($ch, CURLOPT_POST, 0); 
-	curl_setopt($ch,CURLOPT_URL,$url); 
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-	$file_content = curl_exec($ch);
-	curl_close($ch);
 
-	file_put_contents($path,$downloaded_file);
-		
+    public function downFace($face,$openid){            
+    	$path=$_SERVER['DOCUMENT_ROOT'].__ROOT__.'/Public/img/face/'.$openid.'.jpg';
+        if(file_exists($path)||empty($face))
+            return '无头像或已存在';
+	    $ch=curl_init(); 
+        curl_setopt($ch,CURLOPT_URL,$face); 
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER,1); 
+        curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,5); 
+        $img=curl_exec($ch); 
+        curl_close($ch); 
+        file_put_contents($path,$img);	
     }
 
 }

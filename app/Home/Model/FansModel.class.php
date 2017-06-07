@@ -4,7 +4,7 @@ use Think\Model;
 
 class FansModel  extends Model{
 	function getMyALLFans($id){
-		return $this->where('qid='.$id)->field('name,pay,con,face,createAT')->order('createAT desc')->select();
+		return $this->where('qid='.$id)->field('name,pay,con,openid,createAT')->order('createAT desc')->select();
 	}
 	
 	public function inset(array $data){

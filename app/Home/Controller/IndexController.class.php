@@ -4,9 +4,8 @@ use Think\Controller;
 use Home\Model;
 class IndexController extends Controller {
 
-    protected $PLAYER=array('刘炎','刘德华','大尺佑香','123','陈超');
+   public $test;
     protected function CheckPlayer($name){
-        //$id=array_search($name,$this->PLAYER);
         $requ=array('name'=>$name);
         $field=array('id','createAT','count_pay');
         $u=D('player');

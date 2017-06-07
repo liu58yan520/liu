@@ -12,93 +12,33 @@
 	<link rel="stylesheet" type="text/css" href="__CSS__/common.css">
 	<link rel="stylesheet" type="text/css" href="__CSS__/pay.css">
 </head>
-<style type="text/css">
-	header{
-		width: 100%;
-		height: 200px;
-		background: red;
-	}
-
-	#main{
-		width: 95%;
-		height: 100%;
-		margin:25px auto 0;
-		background: #fafafa;
-		padding: 0 0 35px;
-	}
-	#main .title{
-		width: 100%;
-		height: 35px;
-		line-height: 35px;
-		text-align: center;
-		font-size: 24px;
-		padding: 10px 0;
-		
-	}
-	#main .player{
-		width: 95%;
-		height: auto;
-		display: block;
-		margin:auto;
-		border-radius: 10px;
-		box-shadow:  2px 2px 3px #000;
-	}
-	#main .info{
-		text-align: center;
-		margin: 10px 0;
-	}
-	#main .info .face{
-		width: 42px;
-		border-radius: 50%;
-	}
-	#main .info span{
-		height: 42px;
-		line-height: 42px;
-		overflow: hidden;
-		display: inline-block;
-		margin:0 0 0 10px;
-		font-size: 20px;
-	}
-	#main .info textarea{
-		width: 73%;
-		height: 80px;
-		margin:auto;
-		display: block;
-		resize:none;
-		border:2px dashed #f60;
-		padding: 8px;
-		font-size: 18px;
-		border-radius: 10px;
-	}
-	#main .info .pay{
-		width: 80%;
-		height: 45px;
-		background: #DBB227;
-		color:#fafafa;
-		margin:10px auto;
-		display: block;
-		border:none;
-		border-radius: 10px;
-		font-weight: 700;
-		font-size: 17px;
-	}
-</style>
 <body>
 	<header>
 
 	</header>
 	<div id="main">
 		<p class="title">标题</p>
-		<img class='player' src="__IMG__/108/丁冬.jpg">
+		<img class='player' src="__IMG__/108/{$info.player_name}.jpg">
 		<div class="info">
-			<p><img class='face' src='__IMG__/face.jpg'><span>微信用户 帮 xx 筹集 5块</span></p>
+			<p><img class='face' src='__IMG__/face/{$info.openid}.jpg'><span>{$info.fans_name} 帮 {$info.player_name} 筹集 {$info.num}块</span></p>
 			<form action="{:U(send)}" method="post">
-				<textarea placeholder="对他说两句吧" name='con'></textarea>
-				<input type="hidden" name="pay" value="500">
-				<input type="hidden" name="qid" value="5">
+				<textarea placeholder="对他说两句吧" id='con' name='con'></textarea>
+				<input type="hidden" name="player_name" value="{$info.player_name}">
+				<input type="hidden" name="name" value="{$info.fans_name}">
+				<input type="hidden" name="openid" value="{$info.openid}">
+				<input type="hidden" name="pay" value="{$info.num}">
+				<input type="hidden" name="qid" value="{$info.qid}">
 				<button type="submit" class="pay">付款</button>
 			</form>
 		</div>	
 	</div>
 </body>
+<script type="text/javascript">
+document.getElementsByClassName('pay')[0].onclick=function(){
+	if(document.getElementById('con').value.length>30){
+		alert('请输入30个字以内');
+		return false;
+	}
+}
+</script>
 </html>
