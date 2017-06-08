@@ -42,6 +42,7 @@ $(function(){
 		var num=$('#dialog .pay_num_text').val();
 		if(isNaN(num))
 			return false;
+		$('#dialog').hide();
 		self.location='pay?'+$(this).attr('data')+num;
 		
 	})

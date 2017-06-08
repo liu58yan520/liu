@@ -39,6 +39,9 @@ document.getElementsByClassName('pay')[0].onclick=function(){
 		alert('请输入30个字以内');
 		return false;
 	}
+
+	
 }
+
 </script>
 </html>

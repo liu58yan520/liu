@@ -12,34 +12,39 @@
 	<link rel="stylesheet" type="text/css" href="/collect/Public/css/common.css">
 	<link rel="stylesheet" type="text/css" href="/collect/Public/css/index.css">
 </head>
-<script type="text/javascript">
-  	// var APP 		= "/collect";
-   //  var MODULE 		= "/collect/Home";
-   //  var CONTROLLER 	= "/collect/Home/Index";
-   //  var ACTION 		= "/collect/Home/Index/index";
-    var IMG         ="/collect/Public/img";     
-</script>
 <body>
-	<div id="bg"> <img src="/collect/Public/img/bg.jpg"> </div>
-	<div id="main">
-		<p class='tishi'>此次优惠活动仅仅针对 《中国新歌声》江苏赛区108位唱将</p>
-		<div class="input">
-			<div class="input_bg"></div>
-			<input type="text"  placeholder="姓名">
+
+	<header>
+		<div id="top">
+			<img src="/collect/Public/img/top.jpg">
 		</div>
-		<button id='select'>查找</button>
-	</div>
-<div id="dialog">
-<img class='pic' src="/collect/Public/img/108/陈东.jpg">
-	<div class="text">
-		<p class='con'>刘炎</p>
-		<p class='con'>未创建活动</p>
-	</div>
-	<biv class="btn">
-		<button class='create' href="<?php echo U('Player/index');?>" >创建活动</button>
-		<button class='close'>关闭页面</button>
-	</biv>
-</div>
+		<p class="title">
+			标题xxx
+			<span class='money'>￥<?php echo ($count_pay); ?></span>
+		</p>
+	</header>
+	<div id="main">
+		<p class="title">正标题</p>
+		<p class="sub_title">副标题</p>
+		<div id="content">
+			内容内容内容内容内容内容内容内容内容内容内容内容
+内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+内容内容内容内容内容内容内容内容内容内容内容内容
+内容内容内容内容内容内容内容内容内容内容内容内容
+内容内容内容内容内容内容内容内容内容内容内容内容
+内容内容内容内容内容内容内容内容内容内容内容内容
+内容内容内容内容内容内容内容内容内容内容内容内容
+内容内容内容内容内容内容内容内容内容内容内容内容
+内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+		</div>	
+		<div class="more">查看更多</div>
+	</div>	
+
+	<footer>
+		<button id='submit' >我要众筹</button>
+	</footer>
+
+
 <script type="text/javascript" src='/collect/Public/js/zepto.js'></script>
 <script type="text/javascript" src='/collect/Public/js/index.js'></script>
 </body>

@@ -16,8 +16,6 @@ class PlayerController extends Controller {
         $this->downFace($fans['face'],$fans['openid']); //下载头像
         $pay_url=$this->pay_url($player,$fans);
         $player['pay_url']=$pay_url;
-        dump($player);
-        dump($fans);
         $this->assign('player',$player);
         $this->display();
     }
@@ -77,9 +75,12 @@ class PlayerController extends Controller {
         unset($post['player_name']);
     	$attr=urldecode($this->arrayTOstring($post));
  		$url=dirname(dirname('http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"])).'/Notify/index';
- 		$a=$this->wx->befoepay('新歌声108将众筹--'.$player_name,$attr,$data['num']*100,$url,$post['openid']);
-        dump($a);
+ 		$this->wx->befoepay('新歌声108将众筹--'.$player_name,$attr,$pay*100,$url,$post['openid']);
+        $data=$this->wx->pay();
+        $this->assign('data',$data);
+        $this->display();
     }
+
     private function arrayTOstring(array $arr){
     	$str='';
     	foreach ($arr as $k => $v) 

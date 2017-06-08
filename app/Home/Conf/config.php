@@ -10,4 +10,6 @@ return array(
         'DB_PORT'   => 3306, // 端口
         'DB_PREFIX' => 'tpl_', // 数据库表前缀 
 
+        'COUNT_PAY'	=>	300,	//总共的价格
+
 );
