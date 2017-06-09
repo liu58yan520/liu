@@ -12,7 +12,7 @@ $(function(){
 		}
 	});
 	$('#submit').tap(function(){
-		self:location ='rec';
+		self:location ='Index/rec';
 	});
 
 

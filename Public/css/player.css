@@ -1,17 +1,16 @@
 html,body{
 	--bg--color:#fdfdfd;
 }
-header{
+header img{
 	width: 100%;
-	height: 100px;
-	background: red;
+	display: block;
 }
 #title{	
 	min-height: 50px;
 	background: #fdfdfd;
 	padding: 8px 0;
 	width: 92%;
-	margin:auto;
+	margin:15px auto 0;
 }
 #title .tit{
 	width: 100%;
@@ -31,6 +30,25 @@ header{
 	height: 35px;
 	line-height: 35px;
 	font-weight: 700;
+}
+
+#title #row{
+	width: 100%;
+	margin:0 0 10px;
+	height: 10px;
+	background: #ccc;
+	border-radius: 5px;
+	position: relative;
+}
+ #row .bg_red{
+	background: red;
+	height: 100%;
+	width: 1%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: width 3s;
+	
 }
 #title .info{
 	display: flex;
@@ -111,23 +129,16 @@ footer #pay{
 	padding: 10px;
 
 }
-#dialog .pic{
-	width: 140px;
-	height: auto;
-	display: block;
-	border-radius: 5px;
-	box-shadow: 0 0 2px #000;
+#dialog .money_num{
+	width: 32%;
+	height: 30px;
+	line-height: 30px;
+	box-sizing: border-box;
+	border:1px solid #f60;
+	color:#fff;
 	float: left;
-}
-#dialog .text{
-	float: right;
-	width: 110px;
-	font-size: 18px;
-	color: #fafafa;
-	text-align: right;
-}
-#dialog .text .con{
-	margin: 0 0 10px;
+	margin:0 0 0 1%;
+	text-align: center;
 }
 #dialog .btn{
 	width: 80%;
@@ -149,27 +160,7 @@ footer #pay{
 #dialog .btn button:last-child{
 	float: right;
 }
-#dialog .pay_num{
-	width: 100px;
-	float: right;
-	
-}
-#dialog .pay_num button{
-	display: block;
-	height: 25px;
-	width: 90px;
-	border-radius: 5px;
-	border:none;
-	background: #DBB227;
-	font-size: 19px;
 
-}
-#dialog .pay_num input{
-	width: 85px;
-	height: 30px;
-	padding: 0 0 0 5px;
-	text-align: center;
-}
 
 
 

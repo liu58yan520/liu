@@ -43,21 +43,30 @@ class WX extends WX_Data {
                 return $this->XmlToArray($back_xml);
     }
 
-    public function before_send($url,$post=null){
 
+    public function H5pay(){
+        $url="https://api.mch.weixin.qq.com/pay/unifiedorder";
+        $scene_info='{"h5_info": {"type":"Wap","wap_url": "https://m.jd.com","wap_name": "京东官网"}}';
+            $post=array(
+                "appid"     =>$this->appid,
+                "mch_id"    =>$this->mch_id,
+                "nonce_str" =>$this->randStr(30),
+                "body"      =>$info,
+                "attach"    =>$attach,
+                "out_trade_no"=>$this->randStr(30),
+                "total_fee" =>(int) $pay_num,
+                "spbill_create_ip"=>$_SERVER["REMOTE_ADDR"],
+                "notify_url"=>$notify_url,  
+                "trade_type"=>"MWEB",
+                "scene_info"    =>$scene_info
+                );
         $data=$this->send($url,$post);
-        return $data;
-    }
-    public function fang(){
-        $url="https://api.mch.weixin.qq.com/sandboxnew/pay/getsignkey";
-        $post=array(
-            "mch_id"	=>$this->mch_id,
-            "nonce_str"	=>$this->randStr(30),
-        );
-        return $back=$this->before_send($url,$post);
-        $this->api_key=$back['sandbox_signkey'];
-    }
+        if(isset($data['mweb_url']))
+            header("Location:".$data['mweb_url']);
+        else
+            return $data;
 
+    }
     public function befoepay($info,$attach='',$pay_num,$notify_url,$openid=NULL){
         /*  统一下单
             商品描述，附加信息 价格，通知页面,openid
@@ -78,7 +87,7 @@ class WX extends WX_Data {
             "trade_type"=>"JSAPI",
             "openid"	=>$openid
         );
-        $back=$this->before_send($url,$post);
+        $back=$this->send($url,$post);
         $this->prepay_id=$back['prepay_id'];
         return $back;
     }

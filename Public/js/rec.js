@@ -1,6 +1,3 @@
 $(function(){
-	$('#submit').tap(function(){
-
-		
-	});
+	
 });

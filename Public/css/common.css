@@ -17,6 +17,9 @@ ul,ol{
 a{
 	text-decoration: none;
 }
+.none{
+	display: none;
+}
 #dialog{
 	display: none;
 	position: absolute;

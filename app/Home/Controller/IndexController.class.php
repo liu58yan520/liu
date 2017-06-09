@@ -12,7 +12,9 @@ class IndexController extends Controller {
         $this->display();
     }
     public function create(){
-    	
+    	//创建Player
+        $id=5;
+        $this->redirect('Player/index?id='.$id);
     }
 }
 

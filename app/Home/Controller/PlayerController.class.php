@@ -10,28 +10,31 @@ class PlayerController extends Controller {
 		$this->wx=new \Home\Common\WX(); 
 
 	}
+    // public function index(){
+    //     $player=$this->getPlayer();
+    //     $fans=$this->GetNowUserInfo();   //获取用户信息
+    //     $this->downFace($fans['face'],$fans['openid']); //下载头像
+    //     $pay_url=$this->pay_url($player,$fans);
+    //     $player['pay_url']=$pay_url;
+    //     $this->assign('player',$player);
+    //     $this->display();
+    // }
     public function index(){
-        $player=$this->getPlayer();
-        $fans=$this->GetNowUserInfo();   //获取用户信息
-        $this->downFace($fans['face'],$fans['openid']); //下载头像
-        $pay_url=$this->pay_url($player,$fans);
-        $player['pay_url']=$pay_url;
+        $player=$this->getVAR(I('get.id'));
         $this->assign('player',$player);
         $this->display();
     }
+    private function getVAR($id){
+        $player=$this->getPlayer();
+        $fans=$this->getfansCount($id);
+        $player['count_pay']=empty($fans['sum'])?0:$fans['sum'];
+        $player['count_ren']=empty($fans['count'])?0:$fans['count'];
+        $player['ALL_count_pay']=C('COUNT_PAY');
+        $player['tar_width']=($player['count_pay']/$player['ALL_count_pay'])*100;
+        $player['tar_list_url']=U('Player/fans_list',array('id'=>$player['id']));
+        return $player;
+    }
 	private function GetNowUserInfo(){
-		// if(!isset($_COOKIE['user'])){
-		// 	$info=$this->wx->getInfo();
-  //           $user=array(
-  //               "name"=>$info['nickname'],
-  //               "face"=>rtrim(trim($info['headimgurl']),'0').'64',
-  //               'openid'=>$info['openid']);
-		// 	setcookie("user[name]",$user['name']);
-		// 	setcookie("user[face]",$user['face']);
-		// 	setcookie("user[openid]",$user['openid']);
-		// 	return $user;
-		// }else
-		// 	return $_COOKIE['user'];
 		$info=$this->wx->getInfo();
             $user=array(
                 "name"=>$info['nickname'],
@@ -51,22 +54,21 @@ class PlayerController extends Controller {
         $info['qid']=$player['id'];
         return urldecode(http_build_query($info)).'&num=';    
     }
-
+    private function getfansCount($qid){
+        $p=M('fans');
+        return array('count'=>$p->where('qid='.$qid )->count(),'sum'=>$p->where('qid='.$qid)->Sum('pay'));
+    }
     public function fans_list(){	
-    	$fans=$this->getfans();
+    	$fans=$this->getfans(I('get.id'));
     	$this->assign('fans',$fans);
     	$this->display();
     }
-    private function getfans(){
+    private function getfans($id){
     	$u=D('fans');
-    	$fans=$u->getMyALLFans(I('get.id'));
+    	$fans=$u->getMyALLFans($id);
     	return $fans;
     }
     
-    public function pay(){
-        $this->assign('info',I('get.'));
-        $this->display();
-    }
     public function send(){
     	$post=I('post.');
         $pay=$post['pay'];
@@ -81,7 +83,7 @@ class PlayerController extends Controller {
         $this->display();
     }
 
-    private function arrayTOstring(array $arr){
+    public function arrayTOstring(array $arr){
     	$str='';
     	foreach ($arr as $k => $v) 
     		$str.=$k.'='.$v.'#!#';
