@@ -44,8 +44,8 @@ function onBridgeReady(){
            "paySign":  paySign.innerText,     
        },
     function(res){   
-      	history.go(-1);
-          // if(res.err_msg == "get_brand_wcpay_request:ok" ) {}     
+      	
+           if(res.err_msg == "get_brand_wcpay_request:ok" ) {  history.go(-1); }     
        }
 	); 
 

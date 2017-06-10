@@ -20,11 +20,11 @@ class PlayerController extends Controller {
     //     $this->display();
     // }
     public function index(){
-        $player=$this->getVAR(I('get.id'));
+        $player=$this->setVAR(I('get.id'));
         $this->assign('player',$player);
         $this->display();
     }
-    private function getVAR($id){
+    private function setVAR($id){
         $player=$this->getPlayer();
         $fans=$this->getfansCount($id);
         $player['count_pay']=empty($fans['sum'])?0:$fans['sum'];
@@ -60,6 +60,7 @@ class PlayerController extends Controller {
     }
     public function fans_list(){	
     	$fans=$this->getfans(I('get.id'));
+        $fans['master']=true;
     	$this->assign('fans',$fans);
     	$this->display();
     }

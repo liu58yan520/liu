@@ -43,30 +43,6 @@ class WX extends WX_Data {
                 return $this->XmlToArray($back_xml);
     }
 
-
-    public function H5pay(){
-        $url="https://api.mch.weixin.qq.com/pay/unifiedorder";
-        $scene_info='{"h5_info": {"type":"Wap","wap_url": "https://m.jd.com","wap_name": "京东官网"}}';
-            $post=array(
-                "appid"     =>$this->appid,
-                "mch_id"    =>$this->mch_id,
-                "nonce_str" =>$this->randStr(30),
-                "body"      =>$info,
-                "attach"    =>$attach,
-                "out_trade_no"=>$this->randStr(30),
-                "total_fee" =>(int) $pay_num,
-                "spbill_create_ip"=>$_SERVER["REMOTE_ADDR"],
-                "notify_url"=>$notify_url,  
-                "trade_type"=>"MWEB",
-                "scene_info"    =>$scene_info
-                );
-        $data=$this->send($url,$post);
-        if(isset($data['mweb_url']))
-            header("Location:".$data['mweb_url']);
-        else
-            return $data;
-
-    }
     public function befoepay($info,$attach='',$pay_num,$notify_url,$openid=NULL){
         /*  统一下单
             商品描述，附加信息 价格，通知页面,openid

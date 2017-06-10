@@ -3,13 +3,11 @@ body{
 }
 header{
 	width: 100%;
-
-	padding: 10px;
 }
 header .left{
 	float: left;
 	width: 40%;
-	margin: 0 0 10px;
+	margin: 10px 0 10px 10px;
 }
 header .left img{
 	width: 100%;
@@ -17,11 +15,10 @@ header .left img{
 	display: block;
 }
 header .right{
-	background: #fff;
 	float: right;
-	width: 60%;
-	padding: 0 0 0 20px;
+	width: 54%;
 	box-sizing: border-box;
+	margin: 10px 0 10px 10px;
 }
 header .right p{
 	text-align: left;
@@ -37,7 +34,7 @@ header .right p:first-child{
 	background: #f0f0f0;
 	height: 15px;
 	clear: both;
-	margin:30px 0 0 ;
+	margin:5px 0 0 ;
 	padding: 0 0 0 0 ;
 }
 #main{

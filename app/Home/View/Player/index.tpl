@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="full-screen" content="true">
     <meta name="screen-orientation" content="portrait">
@@ -24,6 +25,7 @@
 		<p class="title">标题xxx</p>
 	</div>
 	<div id="row">
+		<div class="baifen">30%</div>
 		<div class="bg_red" tar_width="{$player.tar_width}"></div>
 	</div>
 	<div class="info">
@@ -58,7 +60,7 @@
 	<div class="money_num">88</div>
 	<div class="money_num">66</div>
 	<div class="money_num">33</div>
-	<label>请输入金额 <input type="number" name="pay_num"></label>
+	<label>请输入赞助金额 <input type="number" name="pay_num"></label>
 	<biv class="btn">
 		<button class='pay_start' data="{$player.pay_url}" >付款</button>
 		<button class='close'>关闭页面</button>
@@ -67,7 +69,7 @@
 
 <i class="none" id='i'>{$player.id}</i>
 <footer>
-<button id='pay'>帮他筹款</button>
+<button id='pay'>帮他筹款</button><button data="{:U('Index/index')}" >我也要筹</button>
 </footer>
 <script type="text/javascript" src='__JS__/zepto.js'></script>
 <script type="text/javascript" src='__JS__/player.js'></script>

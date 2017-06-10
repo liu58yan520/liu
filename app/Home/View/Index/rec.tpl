@@ -24,8 +24,8 @@
 <div id="main">
 <ul>
 	<form action='create' method="post" id='form' >
-		<li><span class="text">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span><input type="text" name="name" required placeholder="请输入姓名"> </li>
-		<li><span class="text">联系方式：</span><input type="number" name="tel" required placeholder="请输入手机号码"></li>
+		<li><span class="text">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span><input type="text" name="name"  placeholder="请输入姓名"> </li>
+		<li><span class="text">联系方式：</span><input type="number" name="tel"  placeholder="请输入手机号码"></li>
 		<li><span class="text">身份证号：</span><input type="text" name="card" placeholder="请输入身份证号"></li>
 	</form>
 </ul>
@@ -34,7 +34,7 @@
 <footer>
 	<button id='submit' form='form'>发起项目</button>
 </footer>
-<div id="dialog"><div class="dialog_bg"> <p class='dialog_text'>发起成功</p></div> </div>
+
 <script type="text/javascript" src='__JS__/zepto.js'></script>
 <script type="text/javascript" src='__JS__/rec.js'></script>
 </body>

@@ -16,6 +16,7 @@ class IndexController extends Controller {
         $id=5;
         $this->redirect('Player/index?id='.$id);
     }
+
 }
 
 

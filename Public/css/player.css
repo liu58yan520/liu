@@ -33,17 +33,32 @@ header img{
 }
 
 #title #row{
-	width: 100%;
-	margin:0 0 10px;
+	width: 90%;
+	margin:15px auto 10px;
 	height: 10px;
 	background: #ccc;
 	border-radius: 5px;
 	position: relative;
 }
+#row .baifen{
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	background: red;
+	border-radius: 3px;
+	text-align: center;
+	color:#fafafa;
+	position: absolute;
+	top: -40px;
+	transition: left 3s;
+
+	left: 0;
+}
  #row .bg_red{
 	background: red;
 	height: 100%;
-	width: 1%;
+	width: 0;
+	border-radius: 5px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -87,7 +102,7 @@ header img{
 }
 #main{
 	width: 92%;
-	margin:10px auto;
+	margin:10px auto 60px;
 	background: var(--bg--color);
 	min-height: 200px;
 }
@@ -99,25 +114,28 @@ footer{
 	border-top: 1px solid #999;
 	padding: 3px 0;
 }
-footer #pay{
-	width: 98%;
+footer button{
+	width: 47%;
 	height: 45px;
 	line-height: 45px;
 	background: #E5C01B;
 	border-radius: 10px;
 	border: none;
-	margin: auto;
-	display: block;
+	margin: 0 0 0 5px;
 	font-size: 18px;
 	color:var(--bg--color);
-
 }
-
+footer button:nth-child(2){
+	margin: 0 5px 0 0;
+	float: right;
+	background: #F3212A;
+}
 /******************************/
+
 #dialog{
 	display: none;
 	width: 260px;
-	height: 250px;
+	height: 170px;
 	background: #343434;
 	position: fixed;
 	left: 0;
@@ -127,17 +145,37 @@ footer #pay{
 	z-index: 999;
 	border-radius: 10px;
 	padding: 10px;
-
 }
 #dialog .money_num{
-	width: 32%;
+	width: 30%;
 	height: 30px;
 	line-height: 30px;
 	box-sizing: border-box;
 	border:1px solid #f60;
 	color:#fff;
 	float: left;
-	margin:0 0 0 1%;
+	margin:0 0 0 7px;
+	text-align: center;
+	border-radius: 5px;
+}
+#dialog label{
+	clear: both;
+	text-align: center;
+	color:#fff;
+	font-size: 18px;
+	display: block;
+	margin:45px 0 0 0;
+
+}
+#dialog label input{
+	width: 60%;
+	border: none;
+	border-radius: 5px;
+	height: 30px;
+	line-height: 30px;
+	padding: 3px 8px;
+	font-size: 16px;
+	margin:8px 0 0 0;
 	text-align: center;
 }
 #dialog .btn{
