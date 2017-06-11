@@ -5,9 +5,6 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="full-screen" content="true">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="x5-fullscreen" content="true">
-    <meta name="360-fullscreen" content="true">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="__CSS__/common.css">
 	<link rel="stylesheet" type="text/css" href="__CSS__/rec.css">
@@ -24,7 +21,7 @@
 <div id="main">
 <ul>
 	<form action='create' method="post" id='form' >
-		<li><span class="text">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span><input type="text" name="name"  placeholder="请输入姓名"> </li>
+		<li><span class="text">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span><input type="text" name="true_name"  placeholder="请输入姓名"> </li>
 		<li><span class="text">联系方式：</span><input type="number" name="tel"  placeholder="请输入手机号码"></li>
 		<li><span class="text">身份证号：</span><input type="text" name="card" placeholder="请输入身份证号"></li>
 	</form>

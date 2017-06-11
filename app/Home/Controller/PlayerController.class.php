@@ -3,95 +3,86 @@ namespace Home\Controller;
 use Think\Controller;
 use Home\Model;
 class PlayerController extends Controller {
-	private $wx;
-	function __construct(){
-		header("Content-Type:text/html;charset=utf-8"); 
-		parent::__construct();
-		$this->wx=new \Home\Common\WX(); 
+    public function __construct(){
+        parent::__construct();
+        $user=cookie('user');
+        if(empty($user)){
+            $wx=new \Home\Common\WX();
+            $wx->getWXuser();
+        }
+        $this->downFace();
+    }
 
-	}
-    // public function index(){
-    //     $player=$this->getPlayer();
-    //     $fans=$this->GetNowUserInfo();   //获取用户信息
-    //     $this->downFace($fans['face'],$fans['openid']); //下载头像
-    //     $pay_url=$this->pay_url($player,$fans);
-    //     $player['pay_url']=$pay_url;
-    //     $this->assign('player',$player);
-    //     $this->display();
-    // }
     public function index(){
-        $player=$this->setVAR(I('get.id'));
+        $player=$this->setVAR();
+        if(empty($player['id']))
+            exit('Not find');
         $this->assign('player',$player);
         $this->display();
     }
-    private function setVAR($id){
+    private function setVAR(){
+        $id=I('get.id');
+        if(empty($id)||!is_numeric($id)) exit('Error');
         $player=$this->getPlayer();
         $fans=$this->getfansCount($id);
+        //总筹集数
         $player['count_pay']=empty($fans['sum'])?0:$fans['sum'];
+        //给他投票的人数
         $player['count_ren']=empty($fans['count'])?0:$fans['count'];
+        //总共要筹多少钱
         $player['ALL_count_pay']=C('COUNT_PAY');
+        //筹款百分比
         $player['tar_width']=($player['count_pay']/$player['ALL_count_pay'])*100;
-        $player['tar_list_url']=U('Player/fans_list',array('id'=>$player['id']));
+       
         return $player;
     }
-	private function GetNowUserInfo(){
-		$info=$this->wx->getInfo();
-            $user=array(
-                "name"=>$info['nickname'],
-                "face"=>rtrim(trim($info['headimgurl']),'0').'64',
-                'openid'=>$info['openid']);
-            return $user;
-	}
+	
 	private function getPlayer(){
-		$u=D('player');
-		$requ=['id'=>I('get.id')];
-        return $u->getPlayer($requ);
+		$u=M('player');
+        $player=$u->where('id='.I('get.id'))->field('*')->find();
+        return $player;
 	}
-    private function pay_url($player,$fans){
-        $info['player_name']=$player['name'];
-        $info['fans_name']=$fans['name'];
-        $info['openid']=$fans['openid'];
-        $info['qid']=$player['id'];
-        return urldecode(http_build_query($info)).'&num=';    
+    public function rep_inset(){
+        $post=array(
+            'text'=>I('post.text'),
+            'rid'=>I('post.rid'),
+            'openid'=>cookie('user')['openid']
+            );
+        $m=M('reply');
+        $m->add($post);
+        echo $post['openid'];
     }
+
     private function getfansCount($qid){
         $p=M('fans');
-        return array('count'=>$p->where('qid='.$qid )->count(),'sum'=>$p->where('qid='.$qid)->Sum('pay'));
+        $count=$p->where('qid='.$qid )->count();
+        $sum=$p->where('qid='.$qid)->Sum('pay');
+        return array('count'=>$count,'sum'=>$sum);
     }
     public function fans_list(){	
     	$fans=$this->getfans(I('get.id'));
-        $fans['master']=true;
     	$this->assign('fans',$fans);
     	$this->display();
     }
-    private function getfans($id){
-    	$u=D('fans');
-    	$fans=$u->getMyALLFans($id);
+    public function getfans($id){ //获取所有捐款人 和回复
+        $u=D('fans');
+        $fans=$u->relation(true)->where('qid='.$id)->select();
     	return $fans;
     }
-    
-    public function send(){
-    	$post=I('post.');
-        $pay=$post['pay'];
-        $player_name=$post['player_name'];
-        unset($post['pay']);
-        unset($post['player_name']);
-    	$attr=urldecode($this->arrayTOstring($post));
- 		$url=dirname(dirname('http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"])).'/Notify/index';
- 		$this->wx->befoepay('新歌声108将众筹--'.$player_name,$attr,$pay*100,$url,$post['openid']);
-        $data=$this->wx->pay();
-        $this->assign('data',$data);
-        $this->display();
+    public function beforePay(){
+        $wx=new \Home\Common\WX();
+        $info="商品简介";
+        $attach="name=".cookie('user')['name']."&qid=".I('post.qid');
+        $num=I('post.pay');
+        $url=dirname(dirname('http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"])).'/Notify/index';
+        $wx->befoepay($info,$attach,$num,$url,cookie('user')['openid']);
+        $back=$wx->pay();
+        echo json_encode($back);
     }
 
-    public function arrayTOstring(array $arr){
-    	$str='';
-    	foreach ($arr as $k => $v) 
-    		$str.=$k.'='.$v.'#!#';
-    	return rtrim($str,'#!#');
-    }
-
-    public function downFace($face,$openid){            
+    private function downFace(){  
+        $face=cookie('user')['face'];
+        $openid=cookie('user')['openid'];
     	$path=$_SERVER['DOCUMENT_ROOT'].__ROOT__.'/Public/img/face/'.$openid.'.jpg';
         if(file_exists($path)||empty($face))
             return '无头像或已存在';
@@ -101,7 +92,7 @@ class PlayerController extends Controller {
         curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,5); 
         $img=curl_exec($ch); 
         curl_close($ch); 
-        file_put_contents($path,$img);	
+        echo file_put_contents($path,$img);	
     }
 
 }

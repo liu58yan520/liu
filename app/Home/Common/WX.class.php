@@ -43,13 +43,13 @@ class WX extends WX_Data {
                 return $this->XmlToArray($back_xml);
     }
 
-    public function befoepay($info,$attach='',$pay_num,$notify_url,$openid=NULL){
+    public function befoepay($info,$attach='',$pay_num,$notify_url,$openid){
         /*  统一下单
             商品描述，附加信息 价格，通知页面,openid
         */
         $url="https://api.mch.weixin.qq.com/pay/unifiedorder";
         if(empty($openid))
-            $openid=$this->getOpenid();
+            return '没有openid';
         $post=array(
             "appid"		=>$this->appid,
             "mch_id"	=>$this->mch_id,
@@ -72,13 +72,28 @@ class WX extends WX_Data {
             $this->befoepay();
             $post=array(
                 "appId"		=>$this->appid,
-                "timeStamp"	=>time(),
+                "timeStamp"	=>(string) time(),
                 "nonceStr"	=>$this->randStr(30),
                 "package"	=>'prepay_id='.$this->prepay_id,
                 "signType"	=>'MD5'
             );
             $post=$this->createSign($post);
+            $post['paySign']=$post['sign'];
+            unset($post['sign']);
             return $post;
+    }
+    public function getWXuser(){
+        $user=cookie('user');
+        if(empty($user)){
+            $info=$this->getInfo();
+            $user=array(
+                "name"=>$info['nickname'],
+                "face"=>rtrim(trim($info['headimgurl']),'0').'64',
+                'openid'=>$info['openid']);
+            cookie('user',$user);
+            return $user;
+        }
+        return $user;   
     }
 
 }

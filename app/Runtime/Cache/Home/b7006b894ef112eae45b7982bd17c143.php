@@ -5,9 +5,6 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="full-screen" content="true">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="x5-fullscreen" content="true">
-    <meta name="360-fullscreen" content="true">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="/collect/Public/css/common.css">
 	<link rel="stylesheet" type="text/css" href="/collect/Public/css/index.css">
@@ -41,7 +38,7 @@
 	</div>	
 
 	<footer>
-		<button id='submit' >我要众筹</button>
+		<button id='submit' url="<?php echo U('Index/rec');?>" >我要众筹</button>
 	</footer>
 
 

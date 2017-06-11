@@ -1,16 +1,18 @@
 <?php 
 namespace Home\Model;
-use Think\Model;
+use Think\Model\RelationModel;
+class FansModel  extends RelationModel{
 
-class FansModel  extends Model{
-	function getMyALLFans($id,$quc='name,pay,con,openid,createAT'){
-		
-		return $this->where('qid='.$id)->field('name,pay,con,openid,createAT')->order('createAT desc')->select();
-	}
+	 protected $_link = array(
+         'reply'  =>  array(
+	        'mapping_type'  => self::HAS_MANY,
+		    'foreign_key'   => 'rid',
+		    'mapping_fields'=>'openid,text',
+	    	'mapping_order' => 'id desc',
+         )
+    
+    );
+
 	
-	public function inset(array $data){
-    	$data['createAT']= date('Y-m-d H:i:s:');    
-    	$this->add($data);
-    }
 
 }

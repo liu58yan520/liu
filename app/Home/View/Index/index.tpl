@@ -5,9 +5,6 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="full-screen" content="true">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="x5-fullscreen" content="true">
-    <meta name="360-fullscreen" content="true">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="__CSS__/common.css">
 	<link rel="stylesheet" type="text/css" href="__CSS__/index.css">
@@ -41,7 +38,11 @@
 	</div>	
 
 	<footer>
-		<button id='submit' >我要众筹</button>
+	<if condition="$id EQ 0"> 
+	   <button id='submit' url="{:U('Index/rec')}" >我要众筹</button>
+	<else />
+	   <button id='submit' url={:U('Player/index',array('id'=>$id))} >我的活动</button>
+	</if>
 	</footer>
 
 

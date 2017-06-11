@@ -13,8 +13,8 @@ header img{
 	margin:15px auto 0;
 }
 #title .tit{
-	width: 100%;
-	padding: 0 10px;
+	width: 92%;
+	margin:auto;	
 }
 #title span{
 	font-size: 13px;
@@ -34,7 +34,7 @@ header img{
 
 #title #row{
 	width: 90%;
-	margin:15px auto 10px;
+	margin:40px auto 10px;
 	height: 10px;
 	background: #ccc;
 	border-radius: 5px;
@@ -51,8 +51,7 @@ header img{
 	position: absolute;
 	top: -40px;
 	transition: left 3s;
-
-	left: 0;
+	left: -15px;
 }
  #row .bg_red{
 	background: red;
@@ -68,10 +67,11 @@ header img{
 #title .info{
 	display: flex;
 	justify-content: space-between;
+	flex-direction: row-reverse;
 }
 #title .info div{
+	flex: 1;
 	text-align: center;
-	width: 33%;
 	border-right: 1px solid #ccc;
 	box-sizing: border-box;
 }
@@ -84,21 +84,20 @@ header img{
 }
 #nav {
 	width: 92%;
-
 	background: var(--bg--color);
 	margin:10px auto;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+
 }
 #nav button{
 	height: 50px;
 	line-height: 50px;
-	width: 33%;
 	border: none;
 	background: #f9f9f9;
 	text-align: center;
 	font-size: 18px;
-
+	flex: 1;
 }
 #main{
 	width: 92%;

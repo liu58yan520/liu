@@ -108,7 +108,8 @@ class WX_Data {
     public function XmlToArray($xml){ //将XML转为array
         //禁止引用外部xml实体
         libxml_disable_entity_loader(true);
-        return json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+        $arr=json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+        return $arr;
     }
 
 }

@@ -1,6 +1,6 @@
 $(function(){
 	var baifen=$('#row .bg_red').attr('tar_width')*0.01;
-$('#row .baifen').text(baifen*100+'%');
+$('#row .baifen').text(parseInt(baifen*100)+'%');
 $('#row .bg_red').css({width:baifen*$('#row').width()+'px'});
 $('#row .baifen').css({left:baifen*$('#row').width()-15+'px'});
 
@@ -11,7 +11,7 @@ $('#row .baifen').css({left:baifen*$('#row').width()-15+'px'});
 
 	$('#nav button').eq(1).tap(function(){ //点击捐款团列表
 
-		$('#main').load($(this).attr('tar_url'));
+		$('#main').load($(this).attr('url')+'?id='+$('#id').text());
 	});
 
 	//$('#nav button').eq(1).trigger('tap');  //模拟点击
@@ -31,11 +31,13 @@ $('#row .baifen').css({left:baifen*$('#row').width()-15+'px'});
 	$('footer button').eq(1).tap(function(){ self:location=$(this).attr('data') });
 
 	$('#dialog .pay_start').tap(function(){  //弹出框里点付款\
-		var num=$('#dialog .pay_num_text').val();
-		if(isNaN(num))
-			return false;
-		$('#dialog').hide();
-		self.location='pay?'+$(this).attr('data')+num;
+		var num=$('#dialog input').val();
+		if(num=='') return false;
+		$('#dialog .close').trigger('tap');
+		$.post($(this).attr('url'),{qid:$('#id').text(),pay:$('#dialog input').val()},function(data){
+			window.pay=JSON.parse(data);
+			callPay();
+		})
 	})
 
 	$('#dialog .close').tap(function(){ 
@@ -45,4 +47,3 @@ $('#row .baifen').css({left:baifen*$('#row').width()-15+'px'});
 
 
 });
-
