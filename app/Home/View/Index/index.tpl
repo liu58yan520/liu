@@ -8,6 +8,17 @@
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="__CSS__/common.css">
 	<link rel="stylesheet" type="text/css" href="__CSS__/index.css">
+	<script type="text/javascript">
+		window.sdk={
+			appId: 		"{$sdk.appId}",
+		   timestamp: 	"{$sdk.timestamp}",
+		   nonceStr: 	"{$sdk.nonceStr}",
+		   signature: 	"{$sdk.signature}",
+		   title:  		"{$sdk.title}",
+		   img:  		"{$sdk.img}",
+		   link:  		"{$sdk.link}",
+		}
+	</script>
 </head>
 <body>
 
@@ -49,5 +60,6 @@
 <script type="text/javascript" src='__JS__/zepto.js'></script>
 <script type="text/javascript" src='__JS__/index.js'></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>  
+<script type="text/javascript" src='__JS__/wxSDK.js'></script>
 </body>
 </html>

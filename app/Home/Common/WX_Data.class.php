@@ -31,13 +31,12 @@ class WX_Data {
     }
     protected function curl_Get($url){
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_TIMEOUT, 50);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 500);
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,FALSE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,FALSE);
         curl_setopt($ch, CURLOPT_HEADER, FALSE);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-
         //运行curl，结果以jason形式返回
         $res = curl_exec($ch);
         curl_close($ch);
@@ -83,7 +82,7 @@ class WX_Data {
         }
 
     }
-    public function randStr($length = 30) {
+    protected function randStr($length = 30) {
         $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         $str = "";
         for ($i = 0; $i < $length; $i++) {
@@ -91,7 +90,7 @@ class WX_Data {
         }
         return $str;
     }
-    public function arrayToXml($arr){
+    protected function arrayToXml($arr){
         if(!is_array($arr))
             return '不是数组';
             $xml = "<xml>";

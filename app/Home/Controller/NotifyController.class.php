@@ -42,14 +42,14 @@ class NotifyController extends Controller {
 		$t=array('transaction_id'=>$data['transaction_id']);
 		$count=$m->where($t)->count();
 		if($count>0){
-			echo 'SUCCESS';
 			echo $this->returnXML;
+			echo 'SUCCESS';
 			return ;
 		}
 		 $id=$m->add($data);
 		if($id){
-			echo 'SUCCESS';
 			echo $this->returnXML;
+			echo 'SUCCESS';
 		}
 
 	}

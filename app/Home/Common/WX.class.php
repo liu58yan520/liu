@@ -34,7 +34,7 @@ class WX extends WX_Data {
         return $this->curl_Get($get_user_info_url);
     }
 
-    public function send($url,$data=null){
+    private function send($url,$data=null){
         $data=$this->createSign($data);
         $xml=$this->createXML($data);
         if(!empty($data))
@@ -97,7 +97,7 @@ class WX extends WX_Data {
         return $user;   
     }
 
-    public function getSignPackage() {
+    public function GetSignPackage() {
         $jsapiTicket = $this->getJsApiTicket();
         $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
         $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -123,8 +123,8 @@ class WX extends WX_Data {
     if (empty($data)||$data->expire_time < time()) {
       $accessToken = $this->getAccessToken();
       $url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?type=jsapi&access_token=$accessToken";
-      $res = json_decode($this->curl_Get($url));
-      $ticket = $res->ticket;
+      $res =$this->curl_Get($url);
+      $ticket = $res['ticket'];
       if ($ticket) {
         $data->expire_time = time() + 7000;
         $data->jsapi_ticket = $ticket;
@@ -139,13 +139,14 @@ class WX extends WX_Data {
     return $ticket;
   }
   private function getAccessToken() {
-    $path=dirname(THINK_PATH).'/Public/jsapi_ticket.json';
+   $path=dirname(THINK_PATH).'/Public/access_token.json';
     // access_token 应该全局存储与更新，以下代码以写入到文件中做示例
     $data = json_decode(file_get_contents($path));
     if (empty($data)||$data->expire_time < time()) {
       $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=$this->appid&secret=$this->secret";
-      $res = json_decode($this->curl_Get($url));
-      $access_token = $res->access_token;
+       $url;
+      $res = $this->curl_Get($url);
+      $access_token = $res['access_token'];
       if ($access_token) {
         $data->expire_time = time() + 7000;
         $data->access_token = $access_token;
