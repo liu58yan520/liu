@@ -50,9 +50,10 @@
 
 <div id="dialog">
 <div class="dialog_bg"></div>
-	<div class="money_num">88</div>
-	<div class="money_num">66</div>
-	<div class="money_num">33</div>
+	<div class="money_num item">88</div>
+	<div class="money_num item">66</div>
+	<div class="money_num item">33</div>
+	<div class="other item">其他</div>
 	<label>请输入赞助金额 <input type="number" name="pay_num"></label>
 	<biv class="btn">
 		<button class='pay_start' url="{:U('Player/beforePay')}" >付款</button>

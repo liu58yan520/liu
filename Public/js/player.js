@@ -40,10 +40,18 @@ $('#row .baifen').css({left:baifen*$('#row').width()-15+'px'});
 		})
 	})
 
+
 	$('#dialog .close').tap(function(){ 
 		$('#dialog').fadeOut().siblings().css({'opacity':'1'});
 	});
-
-
+	$('#dialog .other').tap(function(){
+		$('#dialog').height(170);
+		$('#dialog label').css({'display':'block','margin':'45px auto 0'});
+	})
+	$('#dialog .money_num').tap(function(){
+		var num=$(this).text();
+		$('#dialog input').val(num);
+		$('#dialog .pay_start').trigger('tap'); 
+	});
 
 });

@@ -70,23 +70,27 @@ padding: 8px 10px 40px;
 }
 #list ul .one ol li{
 	display: block;
-	height: 25px;
-	line-height: 25px;
+	min-height: 30px;
+	line-height: 30px;
 	font-size: 14px;
 	margin:3px auto  ;
 	padding: 3px 0;
 	border-top: 1px solid #e9e9e9;
 	width: 80%;
 }
+#list ul .one ol li .er{
+	display: none;
+}
 #list ul .one ol li .rep_face{
-	width: 30px;
+	width: 35px;
 }
 #list ul .one ol li .rep_text_con{
 	font-size: 15px;
 	margin:0 0 0 8px;
-	line-height: 30px;
+	line-height: 35px;
 	white-space:nowrap; 
 }
+
 </style>
 
 <div id="list" url="{:U('Player/rep_inset')}">
@@ -106,8 +110,12 @@ padding: 8px 10px 40px;
 					<volist name='arr.reply' id='rep_num'>	
 						<li>
 							<p>
-								<img class="rep_face" src='__IMG__/face/{$rep_num.openid}.jpg'></img>	
+								<img class="rep_face" src='__IMG__/face/{$rep_num.openid}.jpg'></img>
 								<span class="rep_text_con"> : {$rep_num.text}</span>
+							</p>
+							<p class="rep_text er">回复：
+								<input type="text" name="rec_text">
+								<button class='rep_er_sub' rid="{$arr.id}">提交</button>
 							</p>
 						</li>		
 					</volist>
@@ -140,9 +148,14 @@ $(function(){
 				"<span class='rep_text_con'>"+text+"</span>\n"+
 				"</li>\n</p>\n");
 			_this.parent().prev('ol').append(dom);
+			_this.prev('input').val('');
 		});
 	});
 
+	$('#list ol li').tap(function(){
+		$(this).siblings().find('.rep_text').hide();
+		$(this).find('.er').show();
+	});
 	
 	
 

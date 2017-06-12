@@ -74,8 +74,9 @@ class PlayerController extends Controller {
         $info="商品简介";
         $attach="name=".cookie('user')['name']."&qid=".I('post.qid');
         $num=I('post.pay');
-        $url=dirname(dirname('http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"])).'/Notify/index';
-        $wx->befoepay($info,$attach,$num,$url,cookie('user')['openid']);
+        //$url=dirname(dirname('http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"])).'/Notify/index';
+        $url=dirname(dirname('http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"])).'/Notify/U2FsdGVkX1';
+        $wx->befoepay($info,$attach,$num*100,$url,cookie('user')['openid']);
         $back=$wx->pay();
         echo json_encode($back);
     }

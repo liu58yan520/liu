@@ -48,5 +48,6 @@
 
 <script type="text/javascript" src='__JS__/zepto.js'></script>
 <script type="text/javascript" src='__JS__/index.js'></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>  
 </body>
 </html>

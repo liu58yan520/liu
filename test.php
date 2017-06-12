@@ -53,8 +53,13 @@ function XmlToArray($xml){ //将XML转为array
         return $arr;
     }
 
-$url='http://vote.didifc.com/web/collect/Notify/index';
-$c=curl_Post($a,$url);
-// $b=XmlToArray($a);
+// $url='http://vote.didifc.com/web/collect/Notify/index';
+// $c=curl_Post($a,$url);
+// // $b=XmlToArray($a);
 
-var_dump($c);
+// var_dump($c);
+function abc(){
+  $path="/alidata/www/vote/web/collect/Public/";
+  echo file_put_contents($path.'jsapi_ticket.json', 123);
+}
+echo dirname(THINK_PATH).'/Public/';

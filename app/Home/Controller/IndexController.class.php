@@ -7,10 +7,12 @@ class IndexController extends Controller {
     public function index(){
         $wx=new \Home\Common\WX();
         $user=$wx->getWXuser();
+        $sign=$wx->GetSignPackage();
         $m=M('player');
         $id=$m->field('id')->where(array('openid'=>$user['openid']))->find();
         $id=empty($id['id'])?0:$id['id'];
         $this->assign('id',$id);
+        $this->assign('sign',$sign);
     	$this->assign('count_pay',C('COUNT_PAY'));
         $this->display();
     }

@@ -67,7 +67,7 @@ header img{
 #title .info{
 	display: flex;
 	justify-content: space-between;
-	flex-direction: row-reverse;
+	flex-direction: row;
 }
 #title .info div{
 	flex: 1;
@@ -78,8 +78,11 @@ header img{
 #title .info div:nth-child(3){
 	border:none;
 }
+#title .info div p{
+	font-size: 15px;
+}
 #title .info .strong{
-	font-size: 20px;
+	font-size: 18px;
 	color:#f06;
 }
 #nav {
@@ -134,7 +137,7 @@ footer button:nth-child(2){
 #dialog{
 	display: none;
 	width: 260px;
-	height: 170px;
+	height: 100px;
 	background: #343434;
 	position: fixed;
 	left: 0;
@@ -145,8 +148,8 @@ footer button:nth-child(2){
 	border-radius: 10px;
 	padding: 10px;
 }
-#dialog .money_num{
-	width: 30%;
+#dialog .item{
+	width: 22%;
 	height: 30px;
 	line-height: 30px;
 	box-sizing: border-box;
@@ -158,13 +161,12 @@ footer button:nth-child(2){
 	border-radius: 5px;
 }
 #dialog label{
+	display: none;
 	clear: both;
 	text-align: center;
 	color:#fff;
-	font-size: 18px;
-	display: block;
-	margin:45px 0 0 0;
-
+	font-size: 15px;
+	margin:45px auto 0;
 }
 #dialog label input{
 	width: 60%;
@@ -173,7 +175,7 @@ footer button:nth-child(2){
 	height: 30px;
 	line-height: 30px;
 	padding: 3px 8px;
-	font-size: 16px;
+	font-size: 13px;
 	margin:8px 0 0 0;
 	text-align: center;
 }

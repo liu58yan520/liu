@@ -7,7 +7,7 @@ class NotifyController extends Controller {
   <return_msg><![CDATA[OK]]></return_msg>
 </xml>";
 
-	public function index(){
+	public function U2FsdGVkX1(){
 
 		$xml = file_get_contents('php://input');
     	if(empty($xml))
