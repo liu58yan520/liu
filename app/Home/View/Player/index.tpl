@@ -8,6 +8,17 @@
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="__CSS__/common.css">
 	<link rel="stylesheet" type="text/css" href="__CSS__/player.css">
+	<script type="text/javascript">
+		window.sdk={
+			appId: 		"{$sdk.appId}",
+		   timestamp: 	"{$sdk.timestamp}",
+		   nonceStr: 	"{$sdk.nonceStr}",
+		   signature: 	"{$sdk.signature}",
+		   title:  		"{$sdk.title}",
+		   img:  		"{$sdk.img}",
+		   link:  		"{$sdk.link}",
+		}
+	</script>
 </head>
 <body>
 	<header>
@@ -21,7 +32,7 @@
 		<p class="title">标题xxx</p>
 	</div>
 	<div id="row">
-		<div class="baifen">30%</div>
+		<div class="baifen"></div>
 		<div class="bg_red" tar_width="{$player.tar_width}"></div>
 	</div>
 	<div class="info">
@@ -67,6 +78,8 @@
 </footer>
 <script type="text/javascript" src='__JS__/zepto.js'></script>
 <script type="text/javascript" src='__JS__/player.js'></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>  
+<script type="text/javascript" src='__JS__/wxSDK.js'></script>
 <script type="text/javascript" src='__JS__/pay.js'></script>
 </body>
 </html>

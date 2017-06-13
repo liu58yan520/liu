@@ -113,6 +113,9 @@ padding: 8px 10px 40px;
 								<img class="rep_face" src='__IMG__/face/{$rep_num.openid}.jpg'></img>
 								<span class="rep_text_con"> : {$rep_num.text}</span>
 							</p>
+							<p>
+								<span class="rep_text_con">@ : xxxx</span>
+							</p>
 							<p class="rep_text er">回复：
 								<input type="text" name="rec_text">
 								<button class='rep_er_sub' rid="{$arr.id}">提交</button>

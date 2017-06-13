@@ -14,7 +14,7 @@
 		   timestamp: 	"{$sdk.timestamp}",
 		   nonceStr: 	"{$sdk.nonceStr}",
 		   signature: 	"{$sdk.signature}",
-		   title:  		"{$sdk.title}",
+		   title:  		"新歌声暑假班众筹",
 		   img:  		"{$sdk.img}",
 		   link:  		"{$sdk.link}",
 		}

@@ -7,7 +7,6 @@ class IndexController extends Controller {
         $wx=new \Home\Common\WX();
         $user=$wx->getWXuser();
         $sdk=$wx->GetSignPackage();
-        $sdk['title']=$user['name'].'的众筹';
         $sdk['link']= 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']; 
         $sdk['img']='http://'.$_SERVER['HTTP_HOST'].str_replace('\\','/',dirname($_SERVER['SCRIPT_NAME'])).'/Public/img/top.jpg';
         $m=M('player');
@@ -22,7 +21,6 @@ class IndexController extends Controller {
         $this->display();
     }
     public function create(){
-    	$p=D('player');
         $user=I('post.');
         $user['name']=  cookie('user')['name'];
         $user['openid']=cookie('user')['openid'];

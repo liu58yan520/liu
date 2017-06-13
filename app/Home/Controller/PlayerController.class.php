@@ -14,6 +14,12 @@ class PlayerController extends Controller {
     }
 
     public function index(){
+        $wx=new \Home\Common\WX();
+        $sdk=$wx->GetSignPackage();
+        $sdk['link']= 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']; 
+        $sdk['img']='http://'.$_SERVER['HTTP_HOST'].str_replace('\\','/',dirname($_SERVER['SCRIPT_NAME'])).'/Public/img/top.jpg';
+        $sdk['title']=cookie('user')['name'].'的众筹';
+        $this->assign('sdk',$sdk);
         $player=$this->setVAR();
         if(empty($player['id']))
             exit('Not find');
@@ -33,7 +39,7 @@ class PlayerController extends Controller {
         $player['ALL_count_pay']=C('COUNT_PAY');
         //筹款百分比
         $player['tar_width']=($player['count_pay']/$player['ALL_count_pay'])*100;
-       
+        
         return $player;
     }
 	
