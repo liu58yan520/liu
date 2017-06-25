@@ -1,5 +1,7 @@
+.gitignore
 sftp-config.json
 /.idea/
 /.settings/
 /app/Runtime/
 /ThinkPHP/
+test.php
