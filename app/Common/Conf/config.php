@@ -12,5 +12,5 @@ return array(
 		__IMG__=>__ROOT__.'/Public/img', 
 		),
     'TMPL_CACHE_ON'=>false,  //关闭缓存
-    //'SHOW_PAGE_TRACE' =>true,  //数据库调试
+    'SHOW_PAGE_TRACE' =>true,  //数据库调试
 );

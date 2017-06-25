@@ -1,7 +1,7 @@
 <?php 
 $a='<xml>
   <appid><![CDATA[wx2421b1c4370ec43b]]></appid>
-  <attach><![CDATA[name=吖吖&qid=5]]></attach>
+  <attach><![CDATA[name=啊啊哎呀123&qid=5]]></attach>
   <bank_type><![CDATA[CFT]]></bank_type>
   <fee_type><![CDATA[CNY]]></fee_type>
   <is_subscribe><![CDATA[Y]]></is_subscribe>
@@ -16,7 +16,7 @@ $a='<xml>
   <time_end><![CDATA[20140903131540]]></time_end>
   <total_fee>100</total_fee>
   <trade_type><![CDATA[JSAPI]]></trade_type>
-  <transaction_id><![CDATA[10a440b740201409030005092168]]></transaction_id>
+  <transaction_id><![CDATA[11a540b740201409030005092168]]></transaction_id>
 </xml>';
 function curl_Post($xml, $url, $second = 30){
         $ch = curl_init();
@@ -53,13 +53,9 @@ function XmlToArray($xml){ //将XML转为array
         return $arr;
     }
 
-// $url='http://vote.didifc.com/web/collect/Notify/index';
-// $c=curl_Post($a,$url);
-// // $b=XmlToArray($a);
+$url='http://web.didifc.com/collect/Notify/U2FsdGVkX1';
+$b=curl_Post($a,$url);
+$c=XmlToArray($a);
 
-// var_dump($c);
-function abc(){
-  $path="/alidata/www/vote/web/collect/Public/";
-  echo file_put_contents($path.'jsapi_ticket.json', 123);
-}
-echo dirname(THINK_PATH).'/Public/';
+var_dump($b);
+

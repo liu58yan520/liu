@@ -8,13 +8,13 @@ class NotifyController extends Controller {
 </xml>";
 
 	public function U2FsdGVkX1(){
-
 		$xml = file_get_contents('php://input');
     	if(empty($xml))
     		$xml=$GLOBALS["HTTP_RAW_POST_DATA"];
-    	if($arr['result_code']=='FAIL'||$arr['return_code']=='FAIL') 
+    	$arr=$this->FromXml($xml);
+    	if(empty($arr)||$arr['result_code']=='FAIL'||$arr['return_code']=='FAIL') 
     		exit('提交失败');
-		$arr=$this->FromXml($xml);
+		
 		$data=$this->setVAR($arr);
 		$this->insetDB($data);
 		$this->inset_log($data);
@@ -43,8 +43,7 @@ class NotifyController extends Controller {
 		$count=$m->where($t)->count();
 		if($count>0){
 			echo $this->returnXML;
-			echo 'SUCCESS';
-			return ;
+			exit('SUCCESS') ;
 		}
 		 $id=$m->add($data);
 		if($id){

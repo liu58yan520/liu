@@ -3,30 +3,30 @@ namespace Home\Controller;
 use Think\Controller;
 use Home\Model;
 class PlayerController extends Controller {
-    public function __construct(){
-        parent::__construct();
-        $user=cookie('user');
-        if(empty($user)){
-            $wx=new \Home\Common\WX();
-            $wx->getWXuser();
-        }
-        $this->downFace();
-    }
+
 
     public function index(){
-        $wx=new \Home\Common\WX();
-        $sdk=$wx->GetSignPackage();
+        $player=$this->setVAR();
+        $sdk=(new \Home\Common\WX_sdk())->GetSignPackage();
         $sdk['link']= 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']; 
         $sdk['img']='http://'.$_SERVER['HTTP_HOST'].str_replace('\\','/',dirname($_SERVER['SCRIPT_NAME'])).'/Public/img/top.jpg';
         $sdk['title']=cookie('user')['name'].'的众筹';
         $this->assign('sdk',$sdk);
-        $player=$this->setVAR();
+        
         if(empty($player['id']))
             exit('Not find');
         $this->assign('player',$player);
         $this->display();
     }
+    private function getUser(){
+        $user=cookie('user');
+        if(empty($user)){
+            $info=(new \Home\Common\WX_info())->getWXuser();
+            cookie('user',$user);
+        }
+    }
     private function setVAR(){
+        $this->getUser();
         $id=I('get.id');
         if(empty($id)||!is_numeric($id)) exit('Error');
         $player=$this->getPlayer();
@@ -49,6 +49,7 @@ class PlayerController extends Controller {
         return $player;
 	}
     public function rep_inset(){
+        $this->downFace();
         $post=array(
             'text'=>I('post.text'),
             'rid'=>I('post.rid'),
@@ -75,8 +76,24 @@ class PlayerController extends Controller {
         $fans=$u->relation(true)->where('qid='.$id)->select();
     	return $fans;
     }
+    public function test(){ 
+        $u=D('fans');
+       // $fans=$u->relation(true)->where('qid=3')->select();
+        //$data=$u->clic($fans);
+        //$data=$u->getCommlist();
+        $c=$u->where('qid=3')->find();
+        $a=$u->relationGet('reply');
+        print_r($a);
+    }
+
+
+ 
+
+
     public function beforePay(){
-        $wx=new \Home\Common\WX();
+        if(!IS_AJAX)
+            exit ('You is bitch');
+        $wx=new \Home\Common\WX_pay();
         $info="商品简介";
         $attach="name=".cookie('user')['name']."&qid=".I('post.qid');
         $num=I('post.pay');

@@ -14,7 +14,7 @@ $('#row .baifen').css({left:baifen*$('#row').width()-15+'px'});
 		$('#main').load($(this).attr('url')+'?id='+$('#id').text());
 	});
 
-	//$('#nav button').eq(1).trigger('tap');  //模拟点击
+	$('#nav button').eq(1).trigger('tap');  //模拟点击
 	/****************主页3个菜单结束**************************/
 
 
@@ -36,6 +36,7 @@ $('#row .baifen').css({left:baifen*$('#row').width()-15+'px'});
 		$('#dialog .close').trigger('tap');
 		$.post($(this).attr('url'),{qid:$('#id').text(),pay:$('#dialog input').val()},function(data){
 			window.pay=JSON.parse(data);
+			console.log(pay);
 			callPay();
 		})
 	})

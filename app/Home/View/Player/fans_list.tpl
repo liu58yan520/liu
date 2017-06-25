@@ -1,98 +1,4 @@
-<style type="text/css">
-#list{
-padding: 8px 10px 40px;
-}
-#list ul .one{
-	margin:5px 0 0 0;
-	width: 100%;
-	min-height: 80px;
-	border-bottom: 1px solid #ccc;
-	position: relative;
-}
-#list ul .one:last-child{
-	border-bottom:none;
-}
-#list ul .one img{
-	width: 40px;
-	height: auto;
-	border-radius: 50%;
-	float: left;
-
-}
-#list ul .one .name,#list ul .one .money{
-	margin: 0 0 0 15px; 
-	font-size: 15px;
-	height: 40px;
-	line-height: 40px;
-	display: inline-block;
-}
-#list ul .one .money{
-	margin: 0 10px 0 0; 
-	float: right;
-}
-#list ul .one .text{
-	padding: 8px;
-	clear: left;
-}
-#list ul .one .time{
-	position: absolute;
-	right: 3px;
-	bottom: 3px;
-	font-size: 12px;
-	color:#999;
-}
-#list ul .one .rep_text{
-	font-size: 14px;
-	height: 30px;
-	line-height: 30px;
-	color: #DBB227;
-	margin:0 0 5px;
-	clear: block
-}
-#list ul .one .rep_text input{
-	width: 55%;
-	border: none;
-	outline: 1px dashed #f60;
-	border-right: 3px;
-	height: 25px;
-	line-height: 25px;
-	font-size: 12px;
-	padding: 0 0 0 6px;
-	box-sizing: border-box;
-}
-#list ul .one .rep_text button{
-	width: 50px;
-	height: 30px;
-	border: none;
-	border-radius: 5px;
-	background: #8BCB2E;
-	float: right;
-}
-#list ul .one ol li{
-	display: block;
-	min-height: 30px;
-	line-height: 30px;
-	font-size: 14px;
-	margin:3px auto  ;
-	padding: 3px 0;
-	border-top: 1px solid #e9e9e9;
-	width: 80%;
-}
-#list ul .one ol li .er{
-	display: none;
-}
-#list ul .one ol li .rep_face{
-	width: 35px;
-}
-#list ul .one ol li .rep_text_con{
-	font-size: 15px;
-	margin:0 0 0 8px;
-	line-height: 35px;
-	white-space:nowrap; 
-}
-
-</style>
-
+<link rel="stylesheet" type="text/css" href="__CSS__/fans_list.css">
 <div id="list" url="{:U('Player/rep_inset')}">
 	<ul>
 		<if condition="$fans EQ null">
@@ -113,12 +19,14 @@ padding: 8px 10px 40px;
 								<img class="rep_face" src='__IMG__/face/{$rep_num.openid}.jpg'></img>
 								<span class="rep_text_con"> : {$rep_num.text}</span>
 							</p>
-							<p>
-								<span class="rep_text_con">@ : xxxx</span>
-							</p>
-							<p class="rep_text er">回复：
+							<if condition="$rep_num.fu_id EQ $rep_num.id">
+								<p style="margin-left:22px;">
+									<span class="rep_text_con">@ <img class="rep_face" src='__IMG__/face/{$rep_num.openid}.jpg'></img> : xxxx</span>
+								</p>
+							</if>
+							<p class="rep_text er">@他：
 								<input type="text" name="rec_text">
-								<button class='rep_er_sub' rid="{$arr.id}">提交</button>
+								<button class='rep_sub' rep_id="{$arr.id}">提交</button>
 							</p>
 						</li>		
 					</volist>

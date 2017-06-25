@@ -4,9 +4,8 @@ use Think\Controller;
 use Home\Model;
 class IndexController extends Controller {
     public function index(){
-        $wx=new \Home\Common\WX();
-        $user=$wx->getWXuser();
-        $sdk=$wx->GetSignPackage();
+        $user=$this->getUser();
+        $sdk=(new \Home\Common\WX_sdk())->GetSignPackage();
         $sdk['link']= 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']; 
         $sdk['img']='http://'.$_SERVER['HTTP_HOST'].str_replace('\\','/',dirname($_SERVER['SCRIPT_NAME'])).'/Public/img/top.jpg';
         $m=M('player');
@@ -29,12 +28,14 @@ class IndexController extends Controller {
         $id=$m->add($user);
         $this->redirect('Player/index/id/'.$id);
     }
-    public function test(){
-        $wx=new \Home\Common\WX();
-        $a=$wx->getAccessToken();
-        dump($a);
+    private function getUser(){
+        $user=cookie('user');
+        if(empty($user)){
+            $user=(new \Home\Common\WX_info())->getWXuser();
+            cookie('user',$user);
+        }
+        return $user;
     }
-
 
 }
 

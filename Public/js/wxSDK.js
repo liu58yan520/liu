@@ -1,4 +1,3 @@
-console.log(sdk);
 wx.config({
    debug:  false,  
    appId: 		sdk.appId,
