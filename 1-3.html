@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="true">
+	<title>刷新流程</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.css">
+</head>
+<style type="text/css">
+#nav{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    color: #000;
+    background: #ccc;
+    height: 5vh;
+    line-height: 5vh;
+}
+.select{
+    color: green;
+}
+#con{
+    padding:  2vw;
+}
+#con figure{
+    padding: 1vw 0;
+    border-bottom: 1px solid #ccc; 
+    height: 15vw;
+}
+#con figure:last-child{
+    border: none;
+}
+#con figure>img{
+    width: 20vw;
+    height: 15vw;
+    float: left;
+    margin: 0 2vw 0 0;
+}
+#con figure .tit{
+    color: #000;
+    font-size: 3.5vw;
+}
+#con figure .sub_tit{
+    color: #989898;
+    font-size: 2.8vw;
+}
+.swiper-slide{
+    position: relative;
+}
+.swiper-slide p{
+    position: absolute;
+    bottom: 0;
+    font-size: 3.5;
+    color: #fafafa;
+    background: rgba(0,0,0,0.2);
+
+    width: 100%;
+    height: 7vw;
+    font-size: 4.5vw;
+    line-height: 7vw;
+    text-indent: 3vw;
+}
+.swiper-pagination{
+    text-align: right;
+    line-height: 3vw;
+}
+</style>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide n1"><img src="img/3-top.jpg"><p>标题</p></div>
+        <div class="swiper-slide n2"><img src="img/3-top2.jpg"><p>标题</p></div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+<div id="nav">
+    <p class="select">xxxx</p>
+    <p>xxxx</p>
+    <p>xxxx</p>
+    <p>xxxx</p>
+</div>
+<div id="con">
+    
+</div>
+
+</body>
+<script type="text/javascript" src='js/zepto.js'></script>
+<script type="text/javascript" src='js/swiper.jquery.js'></script>
+<script type="text/javascript">
+ var mySwiper = new Swiper ('.swiper-container', {
+ 	pagination: '.swiper-pagination',
+    loop: true,
+});
+
+$('#nav p').tap(function(){
+    $(this).addClass('select').siblings().removeClass('select');
+    $('#con').empty();
+    $('#con').load('load/1-3-'+($(this).index()+1)+'.html');
+});
+$('#nav p').eq(0).trigger('tap');
+</script>
+</html>
