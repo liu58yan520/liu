@@ -1,0 +1,5 @@
+/.idea/
+/.settings/
+/app/Runtime/
+/ThinkPHP/
+sftp-config.json

@@ -1,0 +1,111 @@
+
+#main .rec_time{
+	width: 80%;
+	padding: 1vh 0;
+	margin: 3vh auto;
+	font-size: 3.5vw;
+	text-align: center;
+	border:1px solid #f60;
+	background: #fdfdfd;
+	border-radius: 5px;
+	box-shadow: 0 0 2px 1px #f60;
+}
+#main .seach{
+	width: 85%;
+	margin: 2vh auto 1vh;
+	height: 5vh;
+}
+#main .seach input{
+	width: 80%;
+	height: 5vh;
+	border: none;
+	float: left;
+	padding: 0 0 0 5px;
+	box-sizing: border-box;
+	outline: none;
+	border-radius: 3px;
+}
+#main .seach button{
+	width: 18%;
+	height: 5vh;
+	border:none;
+	float: right;
+	text-align: center;
+	border-radius: 3px;
+	background: #FE9907;
+}
+#main .tishi{
+	font-size: 3vw;
+	color: #989898;
+	text-align: center;
+	margin-bottom: 1vh;
+}
+#main .tishi b{
+	color: #585858;
+}
+#list {
+	width: 90%;
+	padding: 1vh 0 0;
+	margin: 0 auto;
+	clear: both;
+}
+
+#list figure{
+	margin-bottom: 2vh;
+	z-index: 10;
+	width: 45.5%;
+	float: left;
+	margin: 0 0 2vw 3%;
+	position: relative;
+/*	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;*/
+}
+#list figure .rank{
+	position: absolute;
+	top: 1vw;
+	right: 2vw;
+	font-size: 4vw;
+	background: rgba(0,0,0,0.3);
+	padding: 1vw 2vw;
+	border-radius: 50%;
+	color: #f60;
+}
+#list figure figcaption{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 3vw;
+	background: rgba(0,0,0,0.3);
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	font-size: 3.5vw;
+	font-weight: 600;
+}
+#list figure figcaption .poll{
+	float: right;
+}
+
+
+#show_logo{
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin:auto;
+	top: 20%;
+	width: 70%;
+	z-index: 10;
+	font-size: 3.1vw;
+	background: #000;
+	color:#fff;
+	text-align: center;
+	border-radius: 8px;
+}
+#show_logo p{
+	padding: 1vh 0;
+}
+#show_logo p .icon{
+	position: absolute;
+	right: -3vw;
+	top: -3vw;
+	font-size: 8vw;
+}

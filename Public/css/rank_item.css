@@ -1,0 +1,50 @@
+	#rank{
+		width: 88%;
+		margin:2vh auto;
+		min-height: 100px;
+		background: #fff;
+		padding: 0 0 2vw;
+	}
+	#rank figure{
+		margin: 1vw auto;
+		padding: 1vw 0 0 0;
+		width: 96%;
+		height: 18vw;
+		background:#fff;
+		border-top: 1px solid #ccc;
+	}
+	#rank figure:first-child{
+		border-top: none;
+	}
+	#rank figure figcaption{
+		height: 100%;
+		display: inline-block;
+		margin-left: 2vw;
+	}
+	#rank figure figcaption p{
+		line-height: 9vw;
+	}
+	#rank figure .name{
+		font-size: 4.5vw;
+		color: #484848;
+	}
+	#rank figure .poll{
+		font-size: 3vw;
+		color: #989898;
+	}
+	#rank figure .player{
+		height: 100%;
+		width: auto;
+		float: left;
+		border-radius: 3px;
+	}
+	#rank figure .rank_txt{
+		line-height: 12vw;
+		margin-right: 5vw;
+		color: #000;
+		float: right;
+	}
+	#rank figure .rank_txt .icon{
+		font-size: 11vw;
+		padding: 3.3vw 0 0 0;
+	}
