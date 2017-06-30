@@ -48,3 +48,11 @@
 		font-size: 11vw;
 		padding: 3.3vw 0 0 0;
 	}
+	#rank figure .rank_txt span{
+		margin: 0 1.5vw 0 0;
+		font-size: 3.5vw;
+		padding:1.3vw 2.6vw;
+		color: #fafafa;
+		background:#EB9710;
+		border-radius:50%;
+	}

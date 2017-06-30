@@ -20,19 +20,15 @@ class PLayerModel extends Model{
 		return $this->order('poll desc')->select();
 	}
 	public function vote($id){
-		$id=3;
 		$time=60*60*24;  //限度为24小时
 		$f=M('fans');
-		// $name=cookie('user')['name'];
-		// $openid=cookie('user')['openid'];
-		$name='abc';
-		$openid='123';
-		//$u=$f->field('date')->order('date desc')->where("qid='$id' AND openid='$openid'")->find(1);
-		$u=$this->query("select date from tpl_fans where qid='$id' AND openid='$openid' order by date desc limit 1 ");
-		return $u;
-		if(!empty($u)&& ($u['date']+$time) >time())
+		$name=cookie('user')['name'];
+		$openid=cookie('user')['openid'];
+		$face=cookie('user')['face'];
+		$u=$f->field('date')->where(" `qid`='$id' AND `openid`='$openid' ")->order('date desc')->limit(1)->select();
+		if(!empty($u)&& ($u[0]['date']+$time) >time())
 			return 'last';
-		$data=array('openid'=>$openid,'name'=>$name,'qid'=>$id,'date'=>time());
+		$data=array('openid'=>$openid,'name'=>$name,'qid'=>$id,'date'=>time(),'face'=>$face);
 		if($f->add($data))
 			return $this->where(array('id'=>$id))->setInc('poll',1); 
 	}
@@ -46,5 +42,9 @@ class PLayerModel extends Model{
        $user = $this->getPlayerOne($id);
        $user1= $this->getRankOne($id);
        return $user=array_merge($user,$user1[0]);
+    }
+    public function getALLfans($qid){
+    	$fans=$this->table(__FANS__)->field('name,face')->where(array('qid'=>$qid))->order('date desc')->select();
+    	return $fans;
     }
 }

@@ -14,7 +14,6 @@
 	</div>
 	<p class="tishi">参与投票需关注中南世纪城官方公众号 <b>展示二维码</b></p>
 	<div id="list">
-	<div class="bg"></div>
 		<volist name='user' id='arr'> 
 			<figure>
 				<img src="__IMG__/user/{$arr.name}.jpg">
@@ -52,9 +51,9 @@ $('#show_logo p .icon').tap(function(){
 })
 
 
-//var rec_time=setInterval(GetRTime,0);
+var rec_time=setInterval(GetRTime,0);
 function GetRTime(){
-    var EndTime= new Date('2017/07/15 00:00:00');
+    var EndTime= new Date('2017/07/07 12:00:00');
     var NowTime = new Date();
     var t =EndTime.getTime() - NowTime.getTime();
     var d=0;

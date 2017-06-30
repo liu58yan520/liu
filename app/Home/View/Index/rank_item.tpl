@@ -19,7 +19,7 @@
 				    	<svg class="icon" aria-hidden="true"> <use xlink:href="#icon-disan"></use></svg>
 				    </case>
 				    <default />
-						{$i}
+						<span>{$i}</span>
 				</switch>
 			</p>
 			<p class="uid none">{$user.id}</p>

@@ -14,7 +14,6 @@
 
 	<div class="top">
 		<img src="__IMG__/top.jpg" class="top_img">
-		<p>活动标题</p>
 	</div>
 <div id="main"></div>
 
@@ -41,7 +40,7 @@
 	</div>
 </footer>
 </body>
-<script type="text/javascript" src='http://at.alicdn.com/t/font_gdj38h6t3q9w9udi.js'></script>
+<script type="text/javascript" src='http://at.alicdn.com/t/font_g9k7y7cpax94fgvi.js'></script>
 <script type="text/javascript" src='__JS__/zepto.js'></script>
 <script type="text/javascript" src='__JS__/index.js'></script>
 <!-- 

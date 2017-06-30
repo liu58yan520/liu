@@ -2,35 +2,32 @@
 namespace Home\Controller;
 use Think\Controller;
 class PlayerController extends Controller {
+
     public function index(){
     	if(!I('get.id')) exit("don't hu nao");
+        if(!cookie('user')){
+            $wx=new \Home\Common\WX_info();
+            $user=$wx->getMoreInfo();
+            cookie('user',$user);
+        }
+
         $p=D('player');
-        $user=$p->getPlayerInfo(I('id'));
+        $fans=$p->getALLfans(I('get.id'));
+        $user=$p->getPlayerInfo(I('get.id'));
+        $this->assign('fans',$fans);
         $this->assign('user',$user);
         $this->display();
     }
 
     public function make_vote(){
-    	$p=D('player');
-        $a= $p->vote(I('get.id'));
-        var_dump($a);
+        if(cookie('user')['look']==1){
+            $p=D('player');
+            echo $p->vote(I('get.id'));
+        }else{
+            echo 'look';
+            return ;
+        }
     }
-
-    public function downFace(){  
-        $face=cookie('user')['face'];
-        $openid=cookie('user')['openid'];
-        $path=$_SERVER['DOCUMENT_ROOT'].__ROOT__.'/Public/img/face/'.$openid.'.jpg';
-        if(file_exists($path)||empty($face))
-            return '无头像或已存在';
-        $ch=curl_init(); 
-        curl_setopt($ch,CURLOPT_URL,$face); 
-        curl_setopt($ch,CURLOPT_RETURNTRANSFER,1); 
-        curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,5); 
-        $img=curl_exec($ch); 
-        curl_close($ch); 
-        echo file_put_contents($path,$img); 
-    }
-
 }
 
 

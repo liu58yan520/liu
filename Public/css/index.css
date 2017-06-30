@@ -1,17 +1,4 @@
 
-.top{
-	position: relative;
-}
-.top p{
-	position: absolute;
-	width: 100%;
-	height: 8vw;
-	line-height: 8vw;
-	text-align: center;
-	bottom: 0;
-	color: #fafafa;
-	background: rgba(0,0,0,0.5);
-}
 
 #bottom{
 	clear: both;
@@ -33,6 +20,7 @@ footer{
 footer div{
 	flex: 1;
 	font-size: 2.8vw;
+	display: block;
 	color: #fff;
 	border-right: 1px solid #777;
 }

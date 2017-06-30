@@ -4,6 +4,11 @@ use Think\Controller;
 use Think\Model;
 class IndexController extends Controller {
     public function index(){
+        if(!cookie('user')){
+            $wx=new \Home\Common\WX_info();
+            $user=$wx->getMoreInfo();
+            cookie('user',$user);
+        }
         $this->display();
     }
     public function index_item(){

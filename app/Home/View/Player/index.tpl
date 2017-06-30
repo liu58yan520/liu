@@ -9,75 +9,6 @@
 	<link rel="stylesheet" type="text/css" href="__CSS__/common.css">
 	<link rel="stylesheet" type="text/css" href="__CSS__/player.css">
 </head>
-<style type="text/css">
-body{
-	background: #000;
-}
-header{
-	color: #fafafa;
-	text-align: center;
-}
-header .info{
-	
-	font-size: 4.5vw;
-}
-header .player{
-	width: 90%;
-	border-radius: 5px;
-	margin: 3vh auto;
-}
-header button{
-	display: block;
-	margin: 2vh auto;
-	width: 30%;
-	height: 6vh;
-	border-radius: 10px;
-	border:none;
-	font-size: 3.7vw;
-	background: #31CA3B;
-}
-header .rank{
-	color: yellow;
-}
-#list{
-	width: 92%;
-	min-height: 30px;
-	background: #333;
-	margin: 2vh auto;
-	
-}
-#list p{
-	color: #f60;
-	width: 100%;
-	background: #484848;
-	height: 6vh;
-	line-height: 6vh;
-	text-align: center;
-}
-#list li{
-	padding: 1.5vw 0;
-	height: 5vh;
-	color: #c0c0c0;
-	border-bottom: 1px solid #777;
-}
-#list li:last-child{
-	border: none;
-}
-#list li .face{
-	height: 100%;
-	margin: 0 2vw 0 5vw;
-	width: auto;
-	display: inline-block;
-	float: left;
-	border-radius: 50%;
-}
-#list li span{
-	line-height: 5vh;
-}
-#list li span b{
-	color: #ccc;
-}
-</style>
 <body>
 <header>
 	<img src="__IMG__/user/{$user.name}.jpg" class="player">
@@ -97,20 +28,34 @@ header .rank{
 	<svg class="icon" aria-hidden="true">
 	    <use xlink:href="#icon-toupiao_pre"></use>
 	</svg>
-	以下小伙伴投过票
+		<if condition="$fans eq null ">
+			快来召唤小伙伴投票吧 
+		<else />
+			以下小伙伴投过票
+		</if>
 	<svg class="icon" aria-hidden="true">
 	    <use xlink:href="#icon-toupiao_pre"></use>
 	</svg>
 	</p>
 	<ul>
-		<li> <img class="face" src="__IMG__/face/123.jpg"> <span><b>xx</b> :刚刚为他投票</span> </li>
-		<li> <img class="face" src="__IMG__/face/123.jpg"> <span><b>xx</b> :刚刚为他投票</span> </li>
-		<li> <img class="face" src="__IMG__/face/123.jpg"> <span><b>xx</b> :刚刚为他投票</span> </li>
-		<li> <img class="face" src="__IMG__/face/123.jpg"> <span><b>xx</b> :刚刚为他投票</span> </li>
+		<if condition="$fans NEQ null">
+			<volist name='fans' id='fans'> 
+				<li> <img class="face" src="{$fans.face}"> <span><b>{$fans.name}</b> :刚刚为他投票</span> </li>
+			</volist>
+		</if>
 	</ul>
 </div>
+
+	<div id="show_logo" class="none" >
+	<p>长按图片 点击识别二维码关注后投票 
+			<svg class="icon" aria-hidden="true">
+			    <use xlink:href="#icon-guanbi"></use>
+			</svg>
+	</p>
+	<img src="__IMG__/ewm.jpg">
+	</div>
 </body>
-<script type="text/javascript" src='__JS__/iconfont.js'></script>
+<script type="text/javascript" src='http://at.alicdn.com/t/font_g9k7y7cpax94fgvi.js'></script>
 <script type="text/javascript" src='__JS__/zepto.js'></script>
 <script type="text/javascript">
 $('header button').tap(function(){
@@ -124,13 +69,35 @@ $('header button').tap(function(){
 		if(data==1){
 			$('.poll b').text(Number($('.poll b').text())+1);
 			click_player=true;
+			var dd=$('<li> <img class="face" src="'+unescape(getCookie('user','face'))+'"> <span><b>'+decodeURIComponent(getCookie('user','name'))+'</b> :刚刚为他投票</span> </li>')
+			$('#list ul').prepend(dd);
+
 		}else if(data=='last'){
 			alert('请等待24小时候再给他投');
 			return false;
+		}else if(data=='look'){
+			start_logo();
 		}
 
 	})
 });
+
+function start_logo(){
+	$('#show_logo').show().siblings().css({opacity:0.2});
+}
+$('#show_logo p .icon').tap(function(){
+	$('#show_logo').hide().siblings().css({opacity:1});
+})
+function getCookie(name,f){
+	var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+	var j;
+	if(arr=document.cookie.match(reg)){
+		 j= unescape(arr[2])
+		 j=j.substring(6,j.length);
+		 j= JSON.parse(j);
+		 return j[f];
+	}
+}
 
 </script>
 </html>
