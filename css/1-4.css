@@ -1,0 +1,15 @@
+h1{
+	font-size: 23px;
+}
+h2{
+	font-size: 18px;
+}
+.question,.answer{padding:15px 10px 12px 56px; background:#fff; border-bottom:0.5px solid #f2f2f3; font-size:12px; color:#595959; position:relative;}
+.answer{padding-right:43px;}
+.question b,.answer b{display:inline-block; width:28px; height:26px; line-height:26px; text-align:center; color:#fff; border-radius:3px; position:absolute; top:10px; left:19px;}
+.question b{background:#ff7e00;}
+.answer b{background:#63a831;}
+.answer h3{color:#63a831; font-size:12px; font-weight:normal;}
+.answer p{font-size:12px;}
+.answer{display:none;}
+.answer.active{display:block;}

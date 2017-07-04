@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="true">
+	<title>刷新流程</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+<style type="text/css">
+header{
+	margin-top: 1vw;
+	height: 10vw;
+	position: relative;
+}
+header .l,header .r{
+	height: 1px;
+	width: 35%;
+	position: absolute;
+	top: 50%;
+	background: red;
+}
+header .r{
+	right: 0;
+}
+header .center{
+	position: absolute;
+	text-align: center;
+	width: 30%;
+	height: 10vw;
+	top: 0;
+	left: 0;right: 0;
+	margin: auto;
+	box-sizing: border-box;
+	border-right: 5px solid red;
+	border-left: 5px solid red;
+}
+header .center p:nth-child(1){
+	font-size: 4.5vw;
+}
+header .center p:nth-child(2){
+	font-size: 2.5vw;
+	color: #484848;
+}
+img{
+	width: 96%;
+	margin: 2vw auto;
+	border-radius: 3px;
+	box-shadow: 1px 1px 1px 1px #ccc;
+}
+</style>
+
+</head>
+<body>
+<header>
+<div class="l"></div>
+<div class="center"><p>案例展示</p><p>Case show</p></div>
+<div class="r"></div>
+</header>
+<div class="show">
+
+</div>
+</body>
+<script type="text/javascript">
+var node='';
+for (var i = 0; i < 14; i++) {
+	node+='<img src="img/case/'+(i+1)+'.jpg">';
+}
+document.getElementsByClassName('show')[0].innerHTML=node;
+</script>
+</html>
