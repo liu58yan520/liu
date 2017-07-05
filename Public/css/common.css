@@ -1,0 +1,36 @@
+*,div,p,ul,ol,hr,body,html,figure,a,img,header,table{
+	padding:0;
+	margin:0;
+}
+body{
+	font-family:"Microsoft Yahei UI", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,  SimHei, "\5B8B\4F53", simsun, sans-serif;
+	background: #fcfcfc;
+	color:#000;
+	font-size: 62.5%;
+	position: relative;
+}
+.en{
+	font-variant: small-caps;
+    font-family: Arial, Helvetica, sans-serif ;
+    font-size: 9px;
+}
+img{
+	width: 100%;
+    display: block;
+}
+ul,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.none{
+	display: none;
+}
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+
