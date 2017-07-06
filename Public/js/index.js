@@ -15,7 +15,11 @@ $(function(){
 		pagination : '.swiper-pagination',
 		autoHeight: true,
 	})
-	$('.n1').on('click',function(){ self:location='Index/about'});
+	$('.home'). on('click',function(){ $('#main').load('Index/home') });
+	$('.case'). on('click',function(){ $('#main').load('Case/index') });
+	$('.about').on('click',function(){ $('#main').load('Index/about') });
 
+	$('.n1').on('click',function(){    $('#main').load('Index/about')} );
+	$('.home').trigger('click');
 
 });

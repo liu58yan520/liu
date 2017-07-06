@@ -11,16 +11,3 @@
     <link rel="stylesheet" type="text/css" href="__CSS__/index.css">
 	<title>玉楼装饰</title>
 </head>
-<body>
-	<include file="Public/header" />
-	<div id="main"></div>
-	<include file="Public/power" />
-	<div id="botton"></div>
-	<include file="Public/footer" />
-	<include file="Public/top_menu" />
-</body>
-<script type="text/javascript" src='//at.alicdn.com/t/font_c3jdzsyrx1ypsyvi.js'></script>
-<script type="text/javascript" src='__JS__/jquery.min.js'></script>
-<script type="text/javascript" src='__JS__/jquery.swiper.js'></script>
-<script type="text/javascript" src='__JS__/index.js'></script>
-</html>

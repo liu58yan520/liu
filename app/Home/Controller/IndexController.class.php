@@ -5,6 +5,9 @@ class IndexController extends Controller {
     public function index(){
         $this->display();
     }
+    public function home(){
+        $this->display();
+    }
     public function about(){
     	$this->display();
     }
