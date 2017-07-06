@@ -197,24 +197,8 @@
 <script type="text/javascript" src='//at.alicdn.com/t/font_c3jdzsyrx1ypsyvi.js'></script>
 <script type="text/javascript" src='__JS__/jquery.min.js'></script>
 <script type="text/javascript" src='__JS__/jquery.swiper.js'></script>
+<script type="text/javascript" src='__JS__/index.js'></script>
 <script type="text/javascript">
-$('.top_menu').click(function(e){  //头部菜单显隐
-	e.stopPropagation();   
-	$('#top_menu').fadeIn()
-});
- $(document).click(function(e){
-	var _con = $('#top_menu');   
-	if(!_con.is(e.target) && _con.has(e.target).length === 0)
-		$('#top_menu').slideUp('slow');           
-});
-
-var mySwiper = new Swiper('.swiper-container', {
-	autoplay: 2000,
-	loop:true,
-	pagination : '.swiper-pagination',
-	autoHeight: true,
-})
-
 
 
 </script>
