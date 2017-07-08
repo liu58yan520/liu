@@ -22,7 +22,15 @@
 		</a>
 	</div>
 	<div class="n6">
+		<a href="tel:{:C('TEL')}">
 		<p class="_img"><svg class="icon" aria-hidden="true"> <use xlink:href="#icon-shouji"></use> </svg></p>
 		<p class="_text">联系我们</p>
+		</a>
 	</div>
 </div>
+<script type="text/javascript">
+$('.n1').on('click',function(){  $('.about').trigger('click') });
+$('.n2').on('click',function(){  $('.case'). trigger('click') });
+$('.n3').on('click',function(){  $('#main').load('List/index?attr=worker'); });
+$('.n4').on('click',function(){  $('#main').load('List/index?attr=pro'); });
+</script>

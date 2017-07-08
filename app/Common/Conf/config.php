@@ -13,4 +13,5 @@ return array(
 		),
     'TMPL_CACHE_ON'=>false,  //关闭缓存
     //'SHOW_PAGE_TRACE' =>true,  //数据库调试
+   
 );

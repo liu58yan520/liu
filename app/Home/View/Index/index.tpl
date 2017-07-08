@@ -18,8 +18,9 @@
 	<div id="botton"></div>
 	<include file="Public/footer" />
 	<include file="Public/top_menu" />
+	<include file="Item/dialog" />
 </body>
-<script type="text/javascript" src='//at.alicdn.com/t/font_c3jdzsyrx1ypsyvi.js'></script>
+<script type="text/javascript" src='//at.alicdn.com/t/font_vw6rtmc8we2q33di.js'></script>
 <script type="text/javascript" src='__JS__/jquery.min.js'></script>
 <script type="text/javascript" src='__JS__/jquery.swiper.js'></script>
 <script type="text/javascript" src='__JS__/index.js'></script>

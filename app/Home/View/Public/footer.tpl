@@ -8,7 +8,7 @@
 		工程案例
 	</div>
 	<div class="tel">
-		<a href="tel:18012804778"><svg class="icon" aria-hidden="true"> <use xlink:href="#icon-bohao"></use> </svg>
+		<a href="tel:{:C('TEL')}"><svg class="icon" aria-hidden="true"> <use xlink:href="#icon-bohao"></use> </svg>
 		一键拨号</a>
 	</div>
 	<div class="about">
