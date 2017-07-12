@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"  />
+    <title>星耀中国</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+</head>
+<style type="text/css">
+
+form{
+	display: block;
+	clear: both;
+}
+form .con{
+	width: 90%;
+	border-radius: 5px;
+	margin: 3vw auto;
+	padding: 2vw 0;
+	box-shadow: 0 0 2px 2px #999;
+}
+input{
+	display: block;
+	border:none;
+	outline: none;
+	font-size: 3.5vw;
+	width: 90%;
+	margin: 1vw auto;
+	border-radius: 3px;
+	padding: 1vw 0 1vw 2vw;
+}
+input[name="name"]{
+	border-bottom: 1px solid #ccc;
+}
+
+button{
+	width: 80%;
+	padding: 2vw 0;
+	border-radius: 10px;
+	background: green;
+	border:none;
+	display: block;
+	margin: 1vw auto 5vw;
+	color: #fafafa;
+}
+</style>
+<body>
+	<img src="img/top.jpg">
+<form action="server.php">
+	<div class="con">
+		<input type="text" name="name" placeholder="姓名">
+		<input type="tel" name="tel" placeholder="电话号码">
+	</div>
+
+	<button class="sub" type='submit'>提交</button>
+	<button class="rule" type='button'>查看规则</button>
+</form>
+	
+</body>
+<script type="text/javascript" src='js/jquery.js'></script>
+</html>
