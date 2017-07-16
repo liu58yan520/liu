@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="css/common.css">
 </head>
 <style type="text/css">
+body{
+background: #000;
+}
 .top{
 	text-align: center;
 	width: 100%;
@@ -17,24 +20,60 @@
 	color: #fafafa;
 }
 .case{
-	height: 50vh;
+	height: 70vh;
 	width: auto;
-	margin: 2vw auto;
+	margin: 2vw auto 5vw;
+    border-radius: 5px;
+}
+input{
+    display: block;
+    width: 70%;
+    padding: 1vw 2vw;
+    font-size: 3vw;
+    color:#484848;
+    margin: 1.5vw auto;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+}
+
+button{
+    width: 30%;
+    padding: 2vw;
+    border-radius: 15px;
+    margin: 1.5vw auto;
+    display: block;
+    border:none;
+    background: green;
+    font-size: 3.7vw;
+    color: #000;
 }
 </style>
 <body>
-	<div class="top">
-xxxx
-	</div>
-<img src="img/case.png" class="case">
-<form action="server.php" ' method="post" enctype="multipart/form-data">
-<label>
-<input type="file" name="file" >
-</label>
+	<div class="top"> 我为公益骑行点赞 </div>
 
-<button type="submit">提交</button>
+	
+<img src="img/case.jpg" class="case" >
+<form action="server.php" ' method="post" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="姓名">
+    <input type="tel" name="tel" id='tel' placeholder="电话号码">
+    <input type="file" name="file" style="opacity: 0.6">  
+    <input type="hidden" name="MAX_FILE_SIZE" value="4096000">
+    <button type="submit">提交</button>
 </form>
 
 </body>
 <script type="text/javascript" src='js/jquery.js'></script>
+<script type="text/javascript">
+$('button').click(function(e){
+    if(!$('form input').val())
+        return false;
+    if($('#tel').length!=11){
+        alert('请输入正确手机号');
+        return false;
+    }
+
+});
+
+</script>
 </html>

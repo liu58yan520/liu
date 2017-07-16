@@ -16,7 +16,7 @@ form{
 form .con{
 	width: 90%;
 	border-radius: 5px;
-	margin: 3vw auto;
+	margin: 5vw auto 7vw;
 	padding: 2vw 0;
 	box-shadow: 0 0 2px 2px #999;
 }
@@ -41,21 +41,20 @@ button{
 	background: green;
 	border:none;
 	display: block;
-	margin: 1vw auto 5vw;
+	margin: 2vw auto;
 	color: #fafafa;
 }
 </style>
 <body>
 	<img src="img/top.jpg">
-<form action="server.php">
-	<div class="con">
-		<input type="text" name="name" placeholder="姓名">
-		<input type="tel" name="tel" placeholder="电话号码">
-	</div>
 
+	<div class="con">
+		<input type="text" name="name" placeholder="姓名" value="扣扣号">
+		
+	</div>
 	<button class="sub" type='submit'>提交</button>
 	<button class="rule" type='button'>查看规则</button>
-</form>
+
 	
 </body>
 <script type="text/javascript" src='js/jquery.js'></script>

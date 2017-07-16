@@ -1,20 +1,20 @@
 <?php  
-
-require_once "test.php";
-
-if ($_FILES["file"]["error"] > 0) echo '上传错误';
+require_once "Image.php";
+if ($_FILES["file"]["error"]>0) {
+    echo '请上传4兆以内的图片 jpg、gif、png ';
+}
 if ((($_FILES["file"]["type"] == "image/png")
 || ($_FILES["file"]["type"] == "image/jpeg")
+|| ($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/pjpeg"))
-&& ($_FILES["file"]["size"] < 2000000)){
-	
+&& ($_FILES["file"]["size"] < 4096000))
+    $img=new Image_class($_FILES["file"]["tmp_name"],$_POST['name']);
+    $upload=$img->show();
+echo <<<IMG
+<style>
+body,img{margin:0;padding:0}
+img{width:100%;height:100%}
+</style>
+<img src="$upload">
+IMG;
 
-	$obj = new Image_class($_FILES["file"]["tmp_name"]);
-	//$obj->fontMark(array(255,255,255,60),'公园欣欣向荣啊供热爱国人啊额');
-	$obj->load_img();
-      
-
- 
-}
-//else echo $_FILES["file"]["type"];
-	
