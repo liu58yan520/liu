@@ -1,0 +1,39 @@
+#banner{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;left: 0;
+    z-index: 1;
+}
+#banner .swiper-slide{
+    width: 100%;
+    height: 100%;
+}
+#center{
+    height: 7vw;
+    width: 60%;
+    text-align: center;
+    position: absolute;
+    top: 0;bottom: 0;left: 0;right: 0;
+    margin: auto;
+    font-size: 4.5vw;
+    color: #fff;
+    line-height: 4vw;
+}
+#center span{
+    font-size : 2vw;
+    -webkit-transform : scale(0.01) ;
+}
+#center em{
+    font-size : 2vw;
+    -webkit-transform : scale(0.01) ;
+}
+#bg{
+    position: absolute;
+    left: 0;top: 0;
+    z-index: 5;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+}

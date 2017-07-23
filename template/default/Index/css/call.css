@@ -1,0 +1,27 @@
+#main{
+    margin: 13vw 0 0 0;
+    color:#333;
+}
+.text{
+    width: 96%;
+    margin: 1vw auto;
+    color: #666;
+    font-size: 3.3vw;
+    line-height: 6vw;
+}
+h4{
+    text-align: left;
+    font-size: 4.5vw;
+    padding: 3vw;
+    color: #333;
+    font-weight: 400;
+}
+.pic{
+    margin: 3vw auto 2vw;
+    width: 94%;
+    padding: 20vw 0;
+    color: #333;
+    text-align: center;
+    background: #eee;
+    position: relative;
+}

@@ -1,0 +1,61 @@
+#banner{
+    width: 100%;
+    height: auto;
+}
+#main{
+    max-width: var(--w);
+    margin: auto;
+}
+#main figure{
+    position: relative;
+}
+#main figure figcaption{
+    position: absolute;
+    width: 21%;
+    height: 24%;
+    bottom: 5%;
+    right: 5%;
+    cursor: pointer;
+    background: rgba(255,255,255,0.6);
+}
+#main figure figcaption:hover{
+    transition: background .6s;
+    background: rgba(0,0,0,0.6);
+}
+#main figure figcaption:hover p{
+    color: #fff;
+}
+#main figure figcaption p{
+    padding: 2.5rem 1.5rem;
+    font-size: 1.3rem;
+}
+#main figure figcaption .icon{
+    display: none;
+    font-size: 2.4rem;
+    position: absolute;
+    top: 2.2rem;
+    right: 1.5rem;
+
+}
+
+#main figure figcaption:hover .icon{
+    display: block;
+    color: #eee;
+}
+#main figure:nth-child(even) figcaption{
+    right: auto;
+    left: 1.5rem;
+}
+
+footer{
+    color: #80838F;
+    font-size: .7rem;
+    margin: .5rem auto 1rem;
+    max-width: var(--w);
+}
+#top_mao_link{
+    background: red;
+    display: block;
+    float: right;
+    margin: 0 0 0 3rem;    
+}

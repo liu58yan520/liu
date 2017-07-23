@@ -1,0 +1,66 @@
+@import url(top_menu-inc.css);
+*,div,p,ul,ol,hr,body,html,figure,a,img,header,section,h4,h5,h6{
+	padding:0;
+	margin:0;
+}
+body{
+	font-family:'Microsoft JhengHei',"Microsoft YaHei","Microsoft Yahei UI","Helvetica Neue", Helvetica, Arial, SimHei, "\5B8B\4F53", simsun, sans-serif;
+	background: #fcfcfc;
+	color:#000;
+	font-size: 62.5%;
+}
+img{
+	width: 100%;
+  display: block;
+}
+ul,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+.none{
+	display: none;
+}
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+
+.last{
+    background: #eee;
+    color: #989898;
+    width: 100%;
+    text-align: center;
+}
+#power{
+    font-size: 2.7vw;
+    color:#bbb;
+    text-align: center;
+    margin: 1vw 0 2vw;
+}
+
+#dialog{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    left: 0;
+    top: 0;
+    position: fixed;
+    z-index: 700;
+}
+#dialog .xx{
+    position: absolute;
+    width: 10vw;
+    right: 10vw;
+    top: 5vw;
+    z-index: 702;
+}
+#dialog .dialog_img{
+    position: absolute;
+    z-index: 701;
+}

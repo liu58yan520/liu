@@ -1,0 +1,73 @@
+#top_menu{
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    height: 12vw;
+    line-height: 12vw;
+    width: 100%;
+    font-size: 3.5vw;
+    color:#aaa;
+    text-align: center;
+}
+#top_menu img{
+    height: 6vw;
+    width: 3vw;
+    width: auto;
+    margin: 3vw 3vw; 
+    float: left;
+}
+#logo{
+    margin: 20% auto;
+    width: 85%;
+    animation: logo 1.8s;
+} 
+#top_menu .logo{
+    width: auto;
+    margin: 0 0 0 2vw;
+    height: 100%;
+    display: inline-block;
+}
+#top_menu_list{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background:#333;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+}
+#top_menu_list ul{
+    position: absolute;
+    top: 0;right: 0;bottom: 0;left: 0;
+    height: 40%;
+    width: auto;
+    margin: auto;
+    color: #fff;
+    font-size: 5vw;
+    text-align: center;
+}
+#top_menu_list ul li{
+    margin: 4vw 0;
+}
+#top_menu_list ul li:last-child{
+    margin: 4vw 0 0 0;
+    color: #c1c1c1;
+    font-size: 2.8vw;
+}
+#top_menu_list ul li:last-child img{
+    display: inline-block;
+    width: 4vw;
+    margin: 0 0 0 2vw;
+}
+#top_menu_list .close{
+    width: 7vw;
+    position: absolute;
+    right: 7vw;
+    top: 7vw;
+    z-index: 20;
+}
+
+@keyframes logo{  
+    0%{ opacity: 0; width: 0;}  
+    100%{   opacity: 1; width: 85%;  }
+}

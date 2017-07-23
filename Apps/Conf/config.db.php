@@ -1,0 +1,1 @@
+<?php	return array ( 'DB_HOST' => '115.29.238.95', 'DB_PORT' => '3306', 'DB_NAME' => 'test_cms', 'DB_USER' => 'root', 'DB_PWD' => '7c6196ae24', 'DB_PREFIX' => 'yh_', );?>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<include file="Public:js_css"/>
+</head>
+<body>
+<div class="subnav">
+    <div class="content-menu ib-a blue line-x">
+        <a href="{:U(GROUP_NAME. '/Member/index')}" class="onloading"><em>会员管理</em></a><span>|</span>
+        <a href="#" class="onloading on"><em>编辑会员</em></a>
+    </div>
+	<div class="form">
+		<form method='post' id="form_do" name="form_do" action="{:U(GROUP_NAME. '/Member/edit')}">
+		<dl>
+			<dt>邮箱：</dt>
+			<dd>
+				<input type="text" name="email" class="inp_one" value="{$vo.email}" />
+			</dd>
+		</dl>
+		<dl>
+			<dt> 密码：</dt>
+			<dd>
+				<input type="password" name="password" class="inp_one"/>不修改请留空
+			</dd>
+		</dl>
+		<dl>
+			<dt>昵称：</dt>
+			<dd>
+				<input type="text" name="nickname" class="inp_one" value="{$vo.nickname}" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>会员组名：</dt>
+			<dd>
+				<select name="groupid">
+					<foreach name='vlist' item='v'>
+					<option value="{$v.id}" <if condition="$vo.groupid eq $v['id']">selected="selected"</if>>{$v.name}</option>
+					</foreach>
+				</select>
+			</dd>
+		</dl>
+		<dl>
+			<dt> 状态：</dt>
+			<dd>
+				<input type="radio" name="islock" value="0" <if condition="$vo['islock'] eq 0">checked="checked"</if> />正常
+				&nbsp;&nbsp;
+				<input type="radio" name="islock" value="1"<if condition="$vo['islock'] eq 1">checked="checked"</if> />锁定
+			</dd>
+		</dl>
+		<div class="form_b">
+			<input type="hidden" name="id" value="{$vo.id}" />
+			<input type="submit" class="button" id="submit" value="提 交">
+		</div>
+		</div>
+	   </form>
+	</div>
+
+
+</body>
+</html>

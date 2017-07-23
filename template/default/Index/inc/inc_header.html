@@ -1,0 +1,34 @@
+<style type="text/css">
+nav{
+    max-width: var(--w);
+    padding: 1rem;
+    margin: auto;
+}
+nav ul{
+    width: 30%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    font-size: .9rem;
+    justify-content: space-around;
+}
+nav ul a:hover{
+    border-bottom: 1px solid #C0C0C0;
+}
+#top_mao{
+    height: 0;
+    width: 0;
+}
+</style>
+<header>
+<p id="top_mao" name='top_mao'></p>
+    <nav>
+        <ul>
+            <yhcms:navlist limit="5">
+              <li>
+               <a href='{$navlist.url}'>{$navlist.name}</a>
+              </li>   
+            </yhcms:navlist>
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,70 @@
+
+#main{
+    margin: 13vw 0 0 0;
+}
+h4{
+    text-align: left;
+    font-size: 4.5vw;
+    padding: 3vw;
+    color: #333;
+    font-weight: 400;
+}
+.pic{
+    width: 94%;
+    background: #ccc;
+    margin: 1.5vw auto 3vw;
+    position: relative;
+}
+.pic h5{
+    position: absolute;
+    bottom: 0;
+    padding: 2vw 0;
+    font-size: 3.1vw;
+    color: #333;
+    width: 100%;
+    background: rgba(228,229,230,0.7);
+    text-align: center;
+}
+.full{
+    margin: 3vw 0;
+    position: relative;
+}
+.full .bg_text{
+    text-align: center;
+    height: 7vw;
+    font-size: 5vw;
+    position: absolute;
+    left: 0;right: 0;top: 0;bottom: 0;
+    margin: auto;
+    color: #fff;
+}
+.full span{
+    display: block;
+    width: 21%;
+    margin: auto;
+    padding: 1.5vw 0;
+    font-size: 3.5vw;
+    border-bottom: 1px solid #fff;
+}
+.text{
+    width: 92%;
+    margin: 1vw auto;
+    color: #898989;
+    font-size: 2.9vw;
+    line-height: 5vw;
+    letter-spacing:2px;
+}
+.text p{
+    text-indent: 2vw;
+}
+.text em{
+    display: block;
+    font-size: 2.7vw;
+    color: #666;
+    letter-spacing:0;
+}
+#we{
+    margin: 3vw auto;
+    border-top: 3px solid #040000;
+    border-bottom: 3px solid #040000;
+}
