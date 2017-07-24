@@ -20,9 +20,12 @@ img.item{
     margin: 5vw auto;
     box-shadow:10px 10px 10px 1px rgba(230,230,230,.7); 
 }
-img.item:last-child{
-    width: 70%;
-
+img.esp{
+    padding:6vw;
+    width: 55%;
+    border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    transform: rotate(-8deg);
 }
 img.esp{
     width: 78%;

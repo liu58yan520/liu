@@ -16,11 +16,11 @@
     bottom: 5%;
     right: 5%;
     cursor: pointer;
-    background: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.8);
 }
 #main figure figcaption:hover{
     transition: background .6s;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.8);
 }
 #main figure figcaption:hover p{
     color: #fff;
@@ -47,15 +47,3 @@
     left: 1.5rem;
 }
 
-footer{
-    color: #80838F;
-    font-size: .7rem;
-    margin: .5rem auto 1rem;
-    max-width: var(--w);
-}
-#top_mao_link{
-    background: red;
-    display: block;
-    float: right;
-    margin: 0 0 0 3rem;    
-}

@@ -13,6 +13,19 @@ class IndexAction extends CommonAction{  //	PC页面
 		$this->display($this->tpl_file);
 	}
 	
+	public function team(){  //团队
+		$this->display($this->tpl_file);
+	}
+
+	public function about(){
+		$this->display($this->tpl_file);
+	}
+	public function call(){
+		$this->display($this->tpl_file);
+	}
+	public function cases(){
+		$this->display($this->tpl_file);
+	}
 
 }
 ?>

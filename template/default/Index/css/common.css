@@ -1,4 +1,4 @@
-*,div,nav,p,ul,ol,li,hr,body,html,figure,a,img,header,h4,h5,h6{
+*,div,nav,p,ul,ol,li,hr,body,html,figure,figcaption,a,img,header,h4,h5,h6{
 	padding:0;
 	margin:0;
 }
@@ -34,10 +34,44 @@ a{
    overflow: hidden;
 }
 
+
+footer{
+  clear: both;
+  color: #80838F;
+  font-size: .7rem;
+  margin: .5rem auto 1rem;
+  max-width: var(--w);
+}
 #power{
     font-size: 2.7vw;
     color:#bbb;
     text-align: center;
     margin: 1vw 0 2vw;
 }
+#top_mao_link{
+    display: block;
+    float: right;
+    font-size:.8rem;
+    margin: 0 .5rem 0 0;    
+}
 
+#dialog{
+    display: none;
+    width: 100%;
+    background: #333;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 700;
+}
+#dialog .close{
+    position: absolute;
+    width: 10vw;
+    right: 10vw;
+    top: 5vw;
+    z-index: 702;
+}
+#dialog .dialog_img{
+    position: absolute;
+    z-index: 701;
+}

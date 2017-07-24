@@ -15,7 +15,7 @@
 <body>
 <div id='banner' class="swiper-container">
     <div class="swiper-wrapper">
-        <?php $__FOR_START_31716__=1;$__FOR_END_31716__=18;for($i=$__FOR_START_31716__;$i < $__FOR_END_31716__;$i+=1){ ?><div class="swiper-slide"><img src="__IMG__/bg/<?php echo ($i); ?>.jpg"></div><?php } ?>
+        <?php $__FOR_START_24126__=1;$__FOR_END_24126__=18;for($i=$__FOR_START_24126__;$i < $__FOR_END_24126__;$i+=1){ ?><div class="swiper-slide"><img src="__IMG__/bg/<?php echo ($i); ?>.jpg"></div><?php } ?>
     </div>
 </div>
 <div id="bg">

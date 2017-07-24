@@ -14,10 +14,12 @@ class CommonAction extends Action {
 			exit();
 		}*/
 
-		//模板路径
+		//模板路径 inc_dialog
 		$this->tpl_file = '.'.C('TMPL_PATH').MODULE_NAME.'_'.ACTION_NAME.'.html';
 		$this->inc_header = '.'.C('TMPL_PATH').'/inc/inc_header.html';
-		
+		$this->inc_footer = '.'.C('TMPL_PATH').'/inc/inc_footer.html';
+		$this->inc_JS = '.'.C('TMPL_PATH').'/inc/inc_JS.html';
+		$this->inc_dialog = '.'.C('TMPL_PATH').'/inc/inc_dialog.html';
 		$lock = 'Data/install.lock';
 		if(!is_file($lock)){
 			$this->redirect('/install/index');

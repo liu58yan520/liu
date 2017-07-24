@@ -27,4 +27,6 @@ h4{
     height: 60vw;
     overflow: hidden;
     margin: 0 0 3vw; 
+    border-top: 3px solid #040000;
+    border-bottom: 3px solid #040000;
 }

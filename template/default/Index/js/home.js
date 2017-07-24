@@ -9,5 +9,7 @@ $(function(){
         autoHeight:true,
     });
 
-
+    $('#main figure').on('click',function(){
+        window.open('cases');
+    });
 });

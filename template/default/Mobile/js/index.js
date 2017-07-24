@@ -18,11 +18,10 @@ $(function(){
     setTimeout(function(){
         $('#center').fadeOut(1000);
         setTimeout(function(){
-           
             $('#center .tit').text('精品案例 | 点击查看');
             $('#center').fadeIn(800)
             $('#center').on('click',function(){
-                self:location='cases';
+                self:location='Index/cases';
             });
          },1000)
     },5000)

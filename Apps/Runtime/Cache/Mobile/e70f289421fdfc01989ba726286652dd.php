@@ -69,16 +69,16 @@
 
 <section style="margin:2em 1em; display:flex;">
       <section style="border-width: 1px;box-sizing:border-box; border-style: dashed; border-color: rgb(204, 204, 204);line-height: normal; text-align: left;">
-       <section style="display: inline-block; vertical-align: top; margin-top: -35px; padding: 6px;box-sizing:border-box; width: 40%; color: rgb(254, 254, 254); margin-bottom: -10px; float: left; margin-left: -4px; background-color: rgb(139, 162, 176);">
-        <p style="line-height:0;"><img class="dia" src="__IMG__/case_show/2.jpg" /></p>
+       <section style="display: inline-block; vertical-align: top; margin-top: -35px; padding: 6px;box-sizing:border-box; width: 40%; color: rgb(254, 254, 254); margin-bottom: -10px; float: left; margin-left: -4px; background-color: rgb(200,200,200);">
+        <p style="line-height:0;"><img class="dia" src="__IMG__/case_show/b2.jpg" /></p>
        </section>
        <section style="width: 15px; height: 15px; border-radius: 50%; float: right; margin-top: -6px; margin-right: -6px; color: rgb(254, 254, 254); background-color: rgb(66, 85, 96); box-sizing: border-box;"></section>
        <section style="width: 40px; height: 40px; border-radius: 50%; margin-top: -20px; float: left; margin-left: -15px; color: rgb(254, 254, 254); background-color: rgb(66, 85, 96); box-sizing: border-box;"></section>
        <section style="vertical-align: top; padding: 20px 5px; display: inline-block; width: 45%; box-sizing: border-box;">
         <section style="border-bottom: 2px solid rgb(86, 111, 127); border-top-color: rgb(86, 111, 127); border-right-color: rgb(86, 111, 127); border-left-color: rgb(86, 111, 127); width: 100%; margin-bottom: 10px; box-sizing: border-box;">
-         <span style="line-height: 1.75em; font-size: 16px; color: #000000;" >案例</span>
+         <span style="line-height: 1.75em; font-size: 16px; color: #000000;" >Zhu Yuan Run</span>
         </section>
-        <p style="line-height: 1.5em;"><span style="font-size: 14px;">内容内容内容内容内容</span></p>
+        <p style="line-height: 1.5em;"><span style="font-size: 14px;">国际精品家居领导者</span></p>
        </section>
       </section>
       <section style="width: 8px; height: 8px; border-radius: 50%; float: right; margin-top: -4px; margin-right: -4px; color: rgb(254, 254, 254); background-color: rgb(66, 85, 96); box-sizing: border-box;"></section>
