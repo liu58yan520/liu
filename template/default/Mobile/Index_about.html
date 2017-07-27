@@ -15,11 +15,8 @@
 <body>
 <include file='$inc_top_menu'/>
 <div id="main">
-    <div class="full"> <img src="__IMG__/case_show/1.jpg"> </div>
-    <h4>使命</h4>   
-    <p class="text">让设计成为心灵的伴侣，让空间变成活的灵魂</p>
-    <h4>愿景</h4>   
-    <p class="text">成为创意设计行业的引领者</p>
+    <!-- <div class="full"> <img src="__IMG__/case_show/1.jpg"> </div> -->
+    
      <div id='we' class="swiper-container">
         <div class="swiper-wrapper">
             <for start="1" end='12'>
@@ -28,14 +25,19 @@
         </div>
         <div class="swiper-pagination"></div>
     </div> 
-    <h4>社会责任</h4>
-    <p class="text">不忘初心，打造健康积极的办公环境，为客户提供优质环保的设计装修，自觉的把社会责任融入公司发展战略。</p>
-    
+    <include file='$inc_about_info'/>
+    <h4>使命</h4>   
+    <p class="text">让设计成为心灵的伴侣，让空间变成活的灵魂</p>
+    <h4>愿景</h4>   
+    <p class="text">成为创意设计行业的引领者</p>
+    <h4>价值观</h4>   
+    <p class="text">作为新兴创意设计企业，我们前行的道路是没有终点的。我们努力呈现的是以专业、周到的服务为赢取市场价值和品牌价值的最大化，同时凭着敏感的品味触角以及全面的专业素质，我们的团队正在源源不断地向社会奉献上精心设计的佳作。</p>
     <div class="full"> <img src="__P_IMG__/cases/1.jpg"> 
         <p class="bg_text">获奖案例<br>  <span><a href="cases">查看完整案例</a></span></p>
     </div>
-    <include file='$inc_about_info'/>
-<include file='$inc_title' title='价值观' text='作为新兴创意设计企业，我们前行的道路是没有终点的。我们努力呈现的是以专业、周到的服务为赢取市场价值和品牌价值的最大化，同时凭着敏感的品味触角以及全面的专业素质，我们的团队正在源源不断地向社会奉献上精心设计的佳作。' />
+    <include file='$inc_title' title='社会责任' text='不忘初心，打造健康积极的办公环境，为客户提供优质环保的设计装修，自觉的把社会责任融入公司发展战略。' />
+
+
 </div>
 <include file='$inc_dialog'/>
 <include file='$inc_footer'/>
@@ -52,6 +54,20 @@
         paginationClickable: '.swiper-pagination',
         effect: 'coverflow'
     });
+    // function IsPC() {  //判断是否是pc端
+    //     var userAgentInfo = navigator.userAgent;
+    //     var Agents = ["Android", "iPhone",
+    //                 "SymbianOS", "Windows Phone",
+    //                 "iPad", "iPod"];
+    //     var flag = true;
+    //     for (var v = 0; v < Agents.length; v++) {
+    //         if (userAgentInfo.indexOf(Agents[v]) > 0) {
+    //             flag = false;
+    //             break;
+    //         }
+    //     }
+    //     return flag;
+    // }
 </script>
 </html>
 

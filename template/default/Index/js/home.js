@@ -10,6 +10,7 @@ $(function(){
     });
 
     $('#main figure').on('click',function(){
-        window.open('cases');
+        self:location='cases';
     });
+
 });

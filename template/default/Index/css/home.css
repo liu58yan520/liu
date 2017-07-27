@@ -8,6 +8,7 @@
 }
 #main figure{
     position: relative;
+    transform: rotate(0deg); 
 }
 #main figure figcaption{
     position: absolute;

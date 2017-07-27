@@ -61,7 +61,7 @@ nav ul a:hover{
 </div>
 <div id="main">
     <figure>
-        <img class="dia" src='__P_IMG__/cases/1.jpg'>
+        <img src='__P_IMG__/cases/1.jpg'>
         <figcaption>
             <p>卧室书房</p>
             <svg class="icon" aria-hidden="true">

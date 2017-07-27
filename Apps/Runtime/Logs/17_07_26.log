@@ -1,0 +1,10 @@
+[ 2017-07-26T20:37:31+08:00 ] 127.0.0.1 /11y9r
+INFO: [ route_check ] --START--
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\www\g\yhcms\Lib\Behavior\CheckRouteBehavior.class.php 第 191 行.
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:List
+

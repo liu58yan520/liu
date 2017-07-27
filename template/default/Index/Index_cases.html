@@ -66,10 +66,16 @@
 <script type="text/javascript">
     $('figure figcaption').on('click',function(){
         $('#dialog .dialog_img').attr('src',$(this).prev('img').attr('src'));
-     
         $('#dialog .dialog_img').css({bottom:0});
-            
         $('#dialog').show();
     });
+
+    $('#main figure figcaption').hover(function(){
+        var _this=$(this).parent();
+        if(_this.hasClass('zhuan'))
+            _this.removeClass('zhuan')
+        else
+            _this.addClass('zhuan');
+    })
 </script>
 </html>

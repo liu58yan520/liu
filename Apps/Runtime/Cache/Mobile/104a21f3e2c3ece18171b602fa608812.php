@@ -26,23 +26,14 @@
     </ul>
 </div>
 <div id="main">
-    <div class="full"> <img src="__IMG__/case_show/1.jpg"> </div>
-    <h4>使命</h4>   
-    <p class="text">让设计成为心灵的伴侣，让空间变成活的灵魂</p>
-    <h4>愿景</h4>   
-    <p class="text">成为创意设计行业的引领者</p>
+    <!-- <div class="full"> <img src="__IMG__/case_show/1.jpg"> </div> -->
+    
      <div id='we' class="swiper-container">
         <div class="swiper-wrapper">
-            <?php $__FOR_START_21367__=1;$__FOR_END_21367__=12;for($i=$__FOR_START_21367__;$i < $__FOR_END_21367__;$i+=1){ ?><div class="swiper-slide"><img class="item" src="__P_IMG__/we/<?php echo ($i); ?>.jpg"></div><?php } ?>
+            <?php $__FOR_START_15558__=1;$__FOR_END_15558__=12;for($i=$__FOR_START_15558__;$i < $__FOR_END_15558__;$i+=1){ ?><div class="swiper-slide"><img class="dia" src="__P_IMG__/we/<?php echo ($i); ?>.jpg"></div><?php } ?>
         </div>
         <div class="swiper-pagination"></div>
     </div> 
-    <h4>社会责任</h4>
-    <p class="text">不忘初心，打造健康积极的办公环境，为客户提供优质环保的设计装修，自觉的把社会责任融入公司发展战略。</p>
-    
-    <div class="full"> <img src="__P_IMG__/cases/1.jpg"> 
-        <p class="bg_text">获奖案例<br>  <span><a href="cases">查看完整案例</a></span></p>
-    </div>
     <style type="text/css">
 #box{
     width: 90%;
@@ -80,6 +71,11 @@
     display: block;
     margin-left: -12vw; 
 }
+#box .icon{
+    width: 4vw;
+    display: inline-block;
+    margin: 0 0 0 1vw;
+}
 </style>
 <div id="box">
     <div class="bg">
@@ -90,12 +86,21 @@
             <p>作为一家专业化设计公司，我们拥有包括建筑设计、室内设计、景观设计以及经济等领域的人才。公司聚集的一群设计独特，新颖的年轻才干，以及经验丰富的工程师团队，使形成多领域跨界合作完成项目设计的风格，保证了设计整体实施的完美。</p>
             <p>本公司主要提供的服务有：建筑装饰工程、地坪工程、钢结构工程、建筑防水工程、防腐保温工程、地基与基础工程设计、施工：建材、金属材料销售等多种类型。</p>
             <p>筑园润企业形象设计立志做品牌最亲密的设计建造管理者，做真正为客户提供优质服务的设计开发者，我们享受设计创造的喜悦，同客户分享设计成就的价值，为此我们自豪并为之前行。</p>
-            <em>电话: <a href="tel:0511-84425678">0511-84425678</a></em>
-            <em>地址: 镇江市天桥路5号旭辉时代大厦9号楼1011-1012 </em> 
+            <em>电话: <a href="tel:0511-84425678">0511-84425678 <img class="icon" src="__IMG__/tel.png"></a></em>
+            <em>地址: 镇江市天桥路5号旭辉时代大厦9号楼1011-1012 <img class="icon" src="__IMG__/city.png"> </em> 
         </div>
     </div>
 </div>
-<section style="display: inline-block; width: 100%; vertical-align: top; color: #555;" data-width="100%">
+    <h4>使命</h4>   
+    <p class="text">让设计成为心灵的伴侣，让空间变成活的灵魂</p>
+    <h4>愿景</h4>   
+    <p class="text">成为创意设计行业的引领者</p>
+    <h4>价值观</h4>   
+    <p class="text">作为新兴创意设计企业，我们前行的道路是没有终点的。我们努力呈现的是以专业、周到的服务为赢取市场价值和品牌价值的最大化，同时凭着敏感的品味触角以及全面的专业素质，我们的团队正在源源不断地向社会奉献上精心设计的佳作。</p>
+    <div class="full"> <img src="__P_IMG__/cases/1.jpg"> 
+        <p class="bg_text">获奖案例<br>  <span><a href="cases">查看完整案例</a></span></p>
+    </div>
+    <section style="display: inline-block; width: 100%; vertical-align: top; color: #555;" data-width="100%">
      <section style="margin-right: 0%; margin-left: 0%; font-size: 11.2px; position: static;transform: translate3d(0px, 0px, 0px);-webkit-transform: translate3d(0px, 0px, 0px);-moz-transform: translate3d(0px, 0px, 0px);-ms-transform: translate3d(0px, 0px, 0px);-o-transform: translate3d(0px, 0px, 0px);">
       <section style="display: inline-block; padding-right: 0.2em; padding-top: 0.5em;box-sizing:border-box;">
        <section style="display: inline-block; vertical-align: top; width: 3em; height: 3em; border: 1px solid rgb(23, 23, 20); padding: 3px; box-sizing:border-box;border-radius: 100%;">
@@ -116,20 +121,22 @@ ZYZ
          <section style="display: inline-block; width: 100%; vertical-align: top;box-sizing:border-box; padding-left: 15px;" data-width="100%">
           <section style="margin-right: 0%; margin-left: 0%; text-align: center; position: static;transform: translate3d(0px, 0px, 0px);-webkit-transform: translate3d(0px, 0px, 0px);-moz-transform: translate3d(0px, 0px, 0px);-ms-transform: translate3d(0px, 0px, 0px);-o-transform: translate3d(0px, 0px, 0px);">
            <section  data-brushtype="text" style="text-align: justify;font-weight:bold; font-size: 18px;">
-价值观
+社会责任
            </section>
           </section>
          </section>
         </section>
         <section style="margin-right: 0%; margin-bottom: 5px; margin-left: 0%; position: static;font-size: 14px;">
          <section >
-作为新兴创意设计企业，我们前行的道路是没有终点的。我们努力呈现的是以专业、周到的服务为赢取市场价值和品牌价值的最大化，同时凭着敏感的品味触角以及全面的专业素质，我们的团队正在源源不断地向社会奉献上精心设计的佳作。
+不忘初心，打造健康积极的办公环境，为客户提供优质环保的设计装修，自觉的把社会责任融入公司发展战略。
          </section>
         </section>
        </section>
       </section>
      </section>
     </section>
+
+
 
 </div>
 <div id="dialog">

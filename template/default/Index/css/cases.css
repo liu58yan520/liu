@@ -10,6 +10,7 @@
     margin: 1vw 1vw 1vw 0; 
     position: relative;
     cursor: pointer;
+    
 }
 #main figure:hover figcaption{
     background:rgba(255,255,255,0.8);
@@ -22,6 +23,7 @@
    margin: auto;
 }
 #main figure figcaption{
+    transform: none;
     width: 55%;
     height: 55%;
     background: rgba(255,255,255,0);
@@ -53,4 +55,13 @@
 }
 footer{
     max-width: 1370px;
+}
+
+.zhuan img{
+    animation: zhuan .6s;
+}
+@keyframes zhuan{
+    0%{ border-radius: 50%; transform:rotate(0deg); }
+    80%{ border-radius: 50%; transform:rotate(360deg); }
+    100%{ border-radius:0; transform:rotate(360deg); }
 }

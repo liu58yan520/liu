@@ -1,0 +1,7 @@
+#main{
+    max-width: var(--w);
+    margin: 2rem auto;
+}
+.team_pic{
+    width: 45rem;
+}

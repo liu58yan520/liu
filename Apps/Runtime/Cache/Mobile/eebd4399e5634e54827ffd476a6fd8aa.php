@@ -15,7 +15,7 @@
 <body>
 <div id='banner' class="swiper-container">
     <div class="swiper-wrapper">
-        <?php $__FOR_START_24126__=1;$__FOR_END_24126__=18;for($i=$__FOR_START_24126__;$i < $__FOR_END_24126__;$i+=1){ ?><div class="swiper-slide"><img src="__IMG__/bg/<?php echo ($i); ?>.jpg"></div><?php } ?>
+        <?php $__FOR_START_18520__=1;$__FOR_END_18520__=18;for($i=$__FOR_START_18520__;$i < $__FOR_END_18520__;$i+=1){ ?><div class="swiper-slide"><img src="__IMG__/bg/<?php echo ($i); ?>.jpg"></div><?php } ?>
     </div>
 </div>
 <div id="bg">
@@ -31,7 +31,16 @@
         <li>筑圆润 | 国际精品家装<img src="__IMG__/huanguan.png"></li>
     </ul>
 </div>
-    <div id="center">
+    <div class="text">
+        <p class="c1">使命</p>
+        <p class="d1">让设计成为心灵的伴侣，让空间变成活的灵魂</p>
+        <p class="c1">愿景</p>
+        <p class="d1">成为创意设计行业的引领者</p>
+        <p class="c1">使命</p>
+        <p class="d1">让设计成为心灵的伴侣，让空间变成活的灵魂</p>
+        
+     </div> 
+    <div id="center">     
         <p class="tit">筑圆润 | 国际精品</p>
         <p><span>&nbsp;&nbsp;Zhu Yuan Run</span>&nbsp;&nbsp;&nbsp;<em> International Boutique</em> </p>
     </div>
